@@ -4,6 +4,7 @@
 	"private": true,
 	"nx": {
 		"tags": [
+			"scope:nextagram",
 			"type:app"
 		],
 		"targets": {
