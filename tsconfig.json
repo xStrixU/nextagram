@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "./apps/nextagram"
+		},
+		{
+			"path": "./libs/nextagram/shared/utils/styling"
+		},
+		{
+			"path": "./libs/nextagram/shared/ui"
 		}
 	]
 }

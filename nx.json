@@ -15,6 +15,9 @@
 		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
 	},
 	"nxCloudId": "683166939d59043cee4a625b",
+	"sync": {
+		"applyChanges": true
+	},
 	"plugins": [
 		{
 			"plugin": "@nx/js/typescript",
@@ -58,6 +61,17 @@
 			"options": {
 				"testTargetName": "test"
 			}
+		},
+		{
+			"plugin": "@nx/react/router-plugin",
+			"options": {
+				"buildTargetName": "build",
+				"devTargetName": "dev",
+				"startTargetName": "start",
+				"watchDepsTargetName": "watch-deps",
+				"buildDepsTargetName": "build-deps",
+				"typecheckTargetName": "typecheck"
+			}
 		}
 	],
 	"targetDefaults": {
@@ -70,6 +84,14 @@
 			"application": {
 				"style": "css",
 				"linter": "eslint"
+			},
+			"library": {
+				"linter": "eslint"
+			}
+		},
+		"@nx/react": {
+			"library": {
+				"unitTestRunner": "none"
 			}
 		}
 	}

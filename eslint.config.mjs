@@ -23,9 +23,12 @@ export default tseslint.config(
 			'@nx/enforce-module-boundaries': [
 				'error',
 				{
-					enforceBuildableLibDependency: true,
 					allow: [String.raw`^.*/eslint(\.base)?\.config\.[cm]?js$`],
 					depConstraints: [
+						{
+							sourceTag: 'scope:nextagram',
+							onlyDependOnLibsWithTags: ['scope:nextagram'],
+						},
 						{
 							sourceTag: 'type:app',
 							onlyDependOnLibsWithTags: ['type:feature', 'type:shared'],
