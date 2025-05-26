@@ -1,0 +1,50 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"noEmit": true,
+		"emitDeclarationOnly": false,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"types": ["node"],
+		"outDir": "dist",
+		"rootDir": "src",
+		"tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
+	},
+	"include": [
+		"../../apps/nextagram/.next/types/**/*.ts",
+		"../../dist/apps/nextagram/.next/types/**/*.ts",
+		"next-env.d.ts",
+		"src/**/*.js",
+		"src/**/*.jsx",
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		".next/types/**/*.ts"
+	],
+	"exclude": [
+		"out-tsc",
+		"dist",
+		"node_modules",
+		"vitest.config.ts",
+		"vitest.config.mts",
+		"src/**/*.spec.ts",
+		"src/**/*.test.ts",
+		".next",
+		"eslint.config.js",
+		"eslint.config.cjs",
+		"eslint.config.mjs"
+	]
+}

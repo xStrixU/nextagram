@@ -1,0 +1,13 @@
+{
+	"name": "@nextagram/nextagram-e2e",
+	"version": "0.0.1",
+	"private": true,
+	"nx": {
+		"tags": [
+			"type:app"
+		],
+		"implicitDependencies": [
+			"@nextagram/nextagram"
+		]
+	}
+}

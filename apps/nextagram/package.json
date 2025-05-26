@@ -1,0 +1,19 @@
+{
+	"name": "@nextagram/nextagram",
+	"version": "0.0.1",
+	"private": true,
+	"nx": {
+		"tags": [
+			"type:app"
+		],
+		"targets": {
+			"dev": {
+				"options": {
+					"args": [
+						"--turbopack"
+					]
+				}
+			}
+		}
+	}
+}
