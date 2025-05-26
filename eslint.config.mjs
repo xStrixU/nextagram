@@ -63,6 +63,7 @@ export default tseslint.config(
 			'unicorn/catch-error-name': 'off',
 			'unicorn/no-array-for-each': 'off',
 			'unicorn/no-array-reduce': 'off',
+			'unicorn/no-await-expression-member': 'off',
 			'unicorn/prefer-module': 'off',
 			'unicorn/prevent-abbreviations': 'off',
 		},

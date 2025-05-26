@@ -49,10 +49,10 @@
 	],
 	"references": [
 		{
-			"path": "../../libs/nextagram/shared/utils/styling"
+			"path": "../../libs/nextagram/shared/ui"
 		},
 		{
-			"path": "../../libs/nextagram/shared/ui"
+			"path": "../../libs/nextagram/shared/i18n"
 		}
 	]
 }
