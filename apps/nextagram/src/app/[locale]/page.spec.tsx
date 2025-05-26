@@ -5,7 +5,9 @@ import Page from './page';
 
 describe('Page', () => {
 	it('should render successfully', () => {
-		const { baseElement } = render(<Page />);
+		const { baseElement } = render(
+			<Page params={Promise.resolve({ locale: 'en' })} />,
+		);
 		expect(baseElement).toBeTruthy();
 	});
 });
