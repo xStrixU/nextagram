@@ -1,0 +1,22 @@
+{
+	"files": [],
+	"include": [],
+	"references": [
+		{
+			"path": "../../shared/forms"
+		},
+		{
+			"path": "../shared"
+		},
+		{
+			"path": "../../shared/ui"
+		},
+		{
+			"path": "../../shared/i18n"
+		},
+		{
+			"path": "./tsconfig.lib.json"
+		}
+	],
+	"extends": "../../../../tsconfig.base.json"
+}

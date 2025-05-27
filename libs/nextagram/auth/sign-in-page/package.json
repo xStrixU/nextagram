@@ -1,0 +1,22 @@
+{
+	"name": "@nextagram/nextagram-auth-sign-in-page",
+	"version": "0.0.1",
+	"private": true,
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.ts",
+			"default": "./src/index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"nx": {
+		"name": "nextagram-auth-sign-in-page",
+		"tags": [
+			"scope:nextagram-auth",
+			"type:feature"
+		]
+	}
+}

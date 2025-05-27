@@ -1,5 +1,77 @@
 {
 	"IndexPage": {
 		"title": "Welcome to Nextagram!"
+	},
+	"auth": {
+		"shared": {
+			"auth-box": {
+				"continue-with": {
+					"content": "or continue with",
+					"google": "Google",
+					"facebook": "Facebook"
+				}
+			}
+		},
+		"sign-in-page": {
+			"auth-box": {
+				"title": "Sign in to your account",
+				"bottomSection": "Don't have an account? <link>Sign up</link>"
+			},
+			"form": {
+				"login": "Username or email",
+				"password": "Password",
+				"rememberMe": "Remember me",
+				"forgotPassword": "Forgot password?",
+				"submit": "Sign In",
+				"errors": {
+					"login": {
+						"required": "Username or email is required"
+					},
+					"password": {
+						"required": "Password is required"
+					}
+				}
+			}
+		},
+		"sign-up-page": {
+			"auth-box": {
+				"title": "Create new account",
+				"bottomSection": "Already have an account? <link>Sign in</link>"
+			},
+			"form": {
+				"fullName": "Full name",
+				"username": "Username",
+				"email": "Email",
+				"password": "Password",
+				"confirmPassword": "Confirm password",
+				"termsAndConditions": "I do accept the <link>Terms and Conditions</link>.",
+				"submit": "Sign Up",
+				"errors": {
+					"fullName": {
+						"required": "Full name is required"
+					},
+					"username": {
+						"required": "Username is required",
+						"minLength": "Username must be at least 3 characters long",
+						"invalid": "Username can only contain letters, numbers, and underscores"
+					},
+					"email": {
+						"required": "Email is required",
+						"invalid": "Email is invalid"
+					},
+					"password": {
+						"required": "Password is required",
+						"minLength": "Password must be at least 6 characters long"
+					},
+					"confirmPassword": {
+						"required": "Confirm password is required",
+						"notMatch": "Passwords do not match"
+					},
+					"termsAndConditions": {
+						"required": "You must accept the Terms and Conditions"
+					}
+				}
+			}
+		}
 	}
 }

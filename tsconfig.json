@@ -17,6 +17,18 @@
 		},
 		{
 			"path": "./libs/nextagram/shared/i18n"
+		},
+		{
+			"path": "./libs/nextagram/shared/forms"
+		},
+		{
+			"path": "./libs/nextagram/auth/shared"
+		},
+		{
+			"path": "./libs/nextagram/auth/sign-in-page"
+		},
+		{
+			"path": "./libs/nextagram/auth/sign-up-page"
 		}
 	]
 }

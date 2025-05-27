@@ -1,5 +1,77 @@
 {
 	"IndexPage": {
 		"title": "Witaj na Nextagram!"
+	},
+	"auth": {
+		"shared": {
+			"auth-box": {
+				"continue-with": {
+					"content": "lub kontynuuj przez",
+					"google": "Google",
+					"facebook": "Facebook"
+				}
+			}
+		},
+		"sign-in-page": {
+			"auth-box": {
+				"title": "Zaloguj się do swojego konta",
+				"bottomSection": "Nie masz jeszcze konta? <link>Zarejestuj się</link>"
+			},
+			"form": {
+				"login": "Nazwa użytkownika lub email",
+				"password": "Hasło",
+				"rememberMe": "Zapamiętaj mnie",
+				"forgotPassword": "Zapomniałeś hasła?",
+				"submit": "Zaloguj się",
+				"errors": {
+					"login": {
+						"required": "Podaj nazwę użytkownika lub email"
+					},
+					"password": {
+						"required": "Podaj hasło"
+					}
+				}
+			}
+		},
+		"sign-up-page": {
+			"auth-box": {
+				"title": "Utwórz nowe konto",
+				"bottomSection": "Masz już konto? <link>Zaloguj się</link>"
+			},
+			"form": {
+				"fullName": "Imię i nazwisko",
+				"username": "Nazwa użytkownika",
+				"email": "Email",
+				"password": "Hasło",
+				"confirmPassword": "Powtórz hasło",
+				"termsAndConditions": "Akceptuję <link>Zasady i warunki</link>.",
+				"submit": "Zarejestruj się",
+				"errors": {
+					"fullName": {
+						"required": "Podaj imię i nazwisko"
+					},
+					"username": {
+						"required": "Podaj nazwę użytkownika",
+						"minLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki",
+						"invalid": "Nazwa użytkownika może zawierać tylko liter, cyfr i podkreślników"
+					},
+					"email": {
+						"required": "Podaj adres email",
+						"invalid": "Adres email jest nieprawidłowy"
+					},
+					"password": {
+						"required": "Podaj hasło",
+						"minLength": "Hasło musi mieć co najmniej 6 znaków"
+					},
+					"confirmPassword": {
+						"required": "Potwierdź hasło",
+						"notMatch": "Hasła nie są identyczne"
+					},
+					"termsAndConditions": {
+						"required": "Musisz zaakceptować Zasady i warunki"
+					}
+				}
+			}
+		}
 	}
 }

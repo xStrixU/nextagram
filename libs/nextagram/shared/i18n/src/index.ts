@@ -1,6 +1,8 @@
 export {
 	NextIntlClientProvider,
 	useTranslations,
+	useMessages,
+	useFormatter,
 	useLocale,
 	hasLocale,
 } from 'next-intl';
