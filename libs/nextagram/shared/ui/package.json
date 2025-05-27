@@ -11,7 +11,8 @@
 			"default": "./src/index.ts"
 		},
 		"./package.json": "./package.json",
-		"./styles.css": "./src/lib/assets/styles.css"
+		"./styles.css": "./src/lib/assets/styles.css",
+		"./icons": "./src/icons.ts"
 	},
 	"nx": {
 		"name": "nextagram-shared-ui",

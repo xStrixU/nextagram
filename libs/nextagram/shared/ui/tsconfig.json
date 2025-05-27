@@ -3,6 +3,9 @@
 	"include": [],
 	"references": [
 		{
+			"path": "../i18n"
+		},
+		{
 			"path": "../utils/styling"
 		},
 		{

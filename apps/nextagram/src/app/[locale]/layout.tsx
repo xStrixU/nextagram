@@ -15,6 +15,8 @@ import '@/assets/styles/globals.css';
 
 import { notFound } from 'next/navigation';
 
+import { AppProviders } from './app-providers';
+
 const inter = Inter({
 	variable: '--font-inter',
 	subsets: ['latin'],
@@ -44,7 +46,9 @@ const RootLayout = async ({ params, children }: RootLayoutProps) => {
 
 	return (
 		<html lang={locale} className={inter.variable}>
-			<body className="antialiased">{children}</body>
+			<body className="antialiased">
+				<AppProviders>{children}</AppProviders>
+			</body>
 		</html>
 	);
 };

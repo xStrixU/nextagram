@@ -52,6 +52,12 @@
 			"path": "../../libs/nextagram/shared/ui"
 		},
 		{
+			"path": "../../libs/nextagram/auth/sign-up-page"
+		},
+		{
+			"path": "../../libs/nextagram/auth/sign-in-page"
+		},
+		{
 			"path": "../../libs/nextagram/shared/i18n"
 		}
 	]

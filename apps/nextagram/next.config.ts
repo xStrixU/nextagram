@@ -11,15 +11,6 @@ const nextConfig: WithNxOptions = {
 	experimental: {
 		ppr: true,
 		dynamicIO: true,
-		typedRoutes: true,
-	},
-	turbopack: {
-		rules: {
-			'*.svg': {
-				as: '*.js',
-				loaders: ['@svgr/webpack'],
-			},
-		},
 	},
 };
 

@@ -30,6 +30,13 @@ export default tseslint.config(
 							onlyDependOnLibsWithTags: ['scope:nextagram'],
 						},
 						{
+							sourceTag: 'scope:nextagram-auth',
+							onlyDependOnLibsWithTags: [
+								'scope:nextagram',
+								'scope:nextagram-auth',
+							],
+						},
+						{
 							sourceTag: 'type:app',
 							onlyDependOnLibsWithTags: ['type:feature', 'type:shared'],
 						},
@@ -64,6 +71,7 @@ export default tseslint.config(
 			'unicorn/no-array-for-each': 'off',
 			'unicorn/no-array-reduce': 'off',
 			'unicorn/no-await-expression-member': 'off',
+			'unicorn/no-null': 'off',
 			'unicorn/prefer-module': 'off',
 			'unicorn/prevent-abbreviations': 'off',
 		},
