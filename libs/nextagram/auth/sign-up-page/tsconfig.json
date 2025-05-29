@@ -15,6 +15,9 @@
 			"path": "../../shared/i18n"
 		},
 		{
+			"path": "../../shared/server"
+		},
+		{
 			"path": "./tsconfig.lib.json"
 		}
 	],

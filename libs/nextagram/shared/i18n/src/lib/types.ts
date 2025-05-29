@@ -12,9 +12,11 @@ declare module 'next-intl' {
 	}
 }
 
+export type Locale = AppConfig['Locale'];
+
 export type LocaleParams<T extends string = never> = Promise<
 	{
-		readonly locale: AppConfig['Locale'];
+		readonly locale: Locale;
 	} & {
 		readonly [K in T]: string;
 	}

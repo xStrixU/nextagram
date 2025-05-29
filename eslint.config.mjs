@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import nx from '@nx/eslint-plugin';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 
@@ -16,6 +17,7 @@ export default tseslint.config(
 	...nx.configs['flat/typescript'],
 	...nx.configs['flat/javascript'],
 	eslintPluginUnicorn.configs.recommended,
+	...pluginQuery.configs['flat/recommended'],
 	includeIgnoreFile(gitignorePath),
 	{
 		files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -72,6 +74,7 @@ export default tseslint.config(
 			'unicorn/no-array-reduce': 'off',
 			'unicorn/no-await-expression-member': 'off',
 			'unicorn/no-null': 'off',
+			'unicorn/prefer-export-from': 'off',
 			'unicorn/prefer-module': 'off',
 			'unicorn/prevent-abbreviations': 'off',
 		},

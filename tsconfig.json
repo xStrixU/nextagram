@@ -29,6 +29,12 @@
 		},
 		{
 			"path": "./libs/nextagram/auth/sign-up-page"
+		},
+		{
+			"path": "./libs/nextagram/shared/env"
+		},
+		{
+			"path": "./libs/nextagram/shared/server"
 		}
 	]
 }

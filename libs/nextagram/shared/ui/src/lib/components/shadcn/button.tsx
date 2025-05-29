@@ -1,5 +1,6 @@
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
+import { Loader2 } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@nextagram/nextagram-shared-utils-styling';
@@ -41,25 +42,35 @@ const buttonVariants = cva(
 	},
 );
 
+type ButtonProps = Readonly<{
+	isLoading?: boolean;
+	asChild?: boolean;
+}> &
+	React.ComponentProps<'button'> &
+	VariantProps<typeof buttonVariants>;
+
 function Button({
 	className,
 	variant,
 	size,
 	fullWidth,
+	isLoading,
 	asChild = false,
+	children,
 	...props
-}: React.ComponentProps<'button'> &
-	VariantProps<typeof buttonVariants> & {
-		asChild?: boolean;
-	}) {
+}: ButtonProps) {
 	const Comp = asChild ? Slot : 'button';
 
 	return (
 		<Comp
 			data-slot="button"
 			className={cn(buttonVariants({ variant, size, fullWidth, className }))}
+			{...(isLoading && { disabled: true })}
 			{...props}
-		/>
+		>
+			{isLoading && <Loader2 className="animate-spin" />}
+			{children}
+		</Comp>
 	);
 }
 

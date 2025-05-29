@@ -17,4 +17,4 @@ export {
 } from './lib/navigation';
 export { routing } from './lib/routing';
 
-export type { LocaleParams } from './lib/types';
+export type { Locale, LocaleParams } from './lib/types';

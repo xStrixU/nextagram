@@ -12,7 +12,7 @@ import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
 import { useSignUpForm } from './use-sign-up-form';
 
 export const SignUpForm = () => {
-	const { form, t, onSubmit } = useSignUpForm();
+	const { form, isPending, t, onSubmit } = useSignUpForm();
 
 	return (
 		<Form {...form}>
@@ -96,7 +96,7 @@ export const SignUpForm = () => {
 						</RowFormItemWrapper>
 					)}
 				/>
-				<Button type="submit" fullWidth>
+				<Button type="submit" isLoading={isPending} fullWidth>
 					{t('submit')}
 				</Button>
 			</form>

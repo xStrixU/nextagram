@@ -5,6 +5,7 @@ import {
 	routing,
 	setRequestLocale,
 } from '@nextagram/nextagram-shared-i18n';
+import { Toaster } from '@nextagram/nextagram-shared-ui';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -15,7 +16,7 @@ import '@/assets/styles/globals.css';
 
 import { notFound } from 'next/navigation';
 
-import { AppProviders } from './app-providers';
+import { AppProviders } from '@/providers/app-providers';
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -47,7 +48,10 @@ const RootLayout = async ({ params, children }: RootLayoutProps) => {
 	return (
 		<html lang={locale} className={inter.variable}>
 			<body className="antialiased">
-				<AppProviders>{children}</AppProviders>
+				<AppProviders>
+					{children}
+					<Toaster />
+				</AppProviders>
 			</body>
 		</html>
 	);

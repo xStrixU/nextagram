@@ -1,6 +1,11 @@
 {
 	"IndexPage": {
-		"title": "Welcome to Nextagram!"
+		"title": "Welcome, {username}!"
+	},
+	"shared": {
+		"errors": {
+			"unexpected": "Something went wrong."
+		}
 	},
 	"auth": {
 		"shared": {
@@ -24,6 +29,8 @@
 				"forgotPassword": "Forgot password?",
 				"submit": "Sign In",
 				"errors": {
+					"invalidCredentials": "Invalid login or password",
+					"verifyEmail": "Verify your email address",
 					"login": {
 						"required": "Username or email is required"
 					},
@@ -46,7 +53,10 @@
 				"confirmPassword": "Confirm password",
 				"termsAndConditions": "I do accept the <link>Terms and Conditions</link>.",
 				"submit": "Sign Up",
+				"success": "Your account has been created! Please verify your email address",
 				"errors": {
+					"usernameTaken": "Username is already taken",
+					"emailTaken": "Email is already registered",
 					"fullName": {
 						"required": "Full name is required"
 					},
@@ -71,6 +81,10 @@
 						"required": "You must accept the Terms and Conditions"
 					}
 				}
+			},
+			"email": {
+				"subject": "Verify your email address",
+				"text": "Click the link to verify your email: {url}"
 			}
 		}
 	}

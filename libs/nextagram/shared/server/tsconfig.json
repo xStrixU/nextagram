@@ -1,0 +1,16 @@
+{
+	"files": [],
+	"include": [],
+	"references": [
+		{
+			"path": "../i18n"
+		},
+		{
+			"path": "../env"
+		},
+		{
+			"path": "./tsconfig.lib.json"
+		}
+	],
+	"extends": "../../../../tsconfig.base.json"
+}
