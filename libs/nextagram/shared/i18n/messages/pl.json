@@ -1,6 +1,11 @@
 {
 	"IndexPage": {
-		"title": "Witaj na Nextagram!"
+		"title": "Witaj, {username}!"
+	},
+	"shared": {
+		"errors": {
+			"unexpected": "Coś poszło nie tak."
+		}
 	},
 	"auth": {
 		"shared": {
@@ -24,6 +29,8 @@
 				"forgotPassword": "Zapomniałeś hasła?",
 				"submit": "Zaloguj się",
 				"errors": {
+					"invalidCredentials": "Niepoprawny login lub hasło",
+					"verifyEmail": "Zweryfikuj swój adres email",
 					"login": {
 						"required": "Podaj nazwę użytkownika lub email"
 					},
@@ -46,7 +53,10 @@
 				"confirmPassword": "Powtórz hasło",
 				"termsAndConditions": "Akceptuję <link>Zasady i warunki</link>.",
 				"submit": "Zarejestruj się",
+				"success": "Twoje konto zostało utworzone! Zweryfikuj swój adres email",
 				"errors": {
+					"usernameTaken": "Ta nazwa użytkownika jest już zajęta",
+					"emailTaken": "Ten email jest już zarejestrowany",
 					"fullName": {
 						"required": "Podaj imię i nazwisko"
 					},
@@ -71,6 +81,10 @@
 						"required": "Musisz zaakceptować Zasady i warunki"
 					}
 				}
+			},
+			"email": {
+				"subject": "Zweryfikuj swój adres email",
+				"text": "Kliknij w link, aby zweryfikować swój adres email: {url}"
 			}
 		}
 	}

@@ -16,7 +16,12 @@ export const SignUpMessages = ({ children }: SignUpMessagesProps) => {
 
 	return (
 		<NextIntlClientProvider
-			messages={pick(messages, 'auth.shared', 'auth.sign-up-page')}
+			messages={pick(
+				messages,
+				'shared.errors',
+				'auth.shared',
+				'auth.sign-up-page',
+			)}
 		>
 			{children}
 		</NextIntlClientProvider>

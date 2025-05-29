@@ -1,9 +1,15 @@
+import { toast } from 'sonner';
+
 import { useZodForm } from '@nextagram/nextagram-shared-forms';
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
+import { useRouter } from '@nextagram/nextagram-shared-i18n';
+import { isAuthError } from '@nextagram/nextagram-shared-server/client';
 
+import { useCreateUser } from '../../api/client/use-create-user';
 import { signUpFormSchema } from './sign-up-form.schema';
 
 export const useSignUpForm = () => {
+	const router = useRouter();
 	const form = useZodForm(signUpFormSchema, {
 		defaultValues: {
 			fullName: '',
@@ -14,11 +20,45 @@ export const useSignUpForm = () => {
 			termsAndConditions: false,
 		},
 	});
+	const { createUser, isPending } = useCreateUser();
 	const t = useTranslations('auth.sign-up-page.form');
+	const tShared = useTranslations('shared');
 
-	const onSubmit = form.handleSubmit(data => {
-		console.log({ data });
-	});
+	const onSubmit = form.handleSubmit(
+		async ({ username, email, password, fullName }) => {
+			try {
+				await createUser({
+					username,
+					email,
+					password,
+					name: fullName,
+				});
 
-	return { form, t, onSubmit };
+				toast(t('success'));
+				router.push('/sign-in');
+			} catch (error) {
+				if (isAuthError(error)) {
+					switch (error.code) {
+						case 'USERNAME_IS_ALREADY_TAKEN_PLEASE_TRY_ANOTHER': {
+							const message = 'auth.sign-up-page.form.errors.usernameTaken';
+
+							form.setError('username', { message });
+							break;
+						}
+						case 'USER_ALREADY_EXISTS': {
+							const message = 'auth.sign-up-page.form.errors.emailTaken';
+
+							form.setError('email', { message });
+							break;
+						}
+					}
+					return;
+				}
+
+				toast.error(tShared('errors.unexpected'));
+			}
+		},
+	);
+
+	return { form, isPending, t, onSubmit };
 };

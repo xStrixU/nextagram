@@ -1,5 +1,11 @@
 import { z } from 'zod';
 
+import {
+	PASSWORD_MIN_LENGTH,
+	USERNAME_MIN_LENGTH,
+	USERNAME_REGEX,
+} from '@nextagram/nextagram-shared-server/client';
+
 export const signUpFormSchema = z
 	.object({
 		fullName: z
@@ -8,8 +14,11 @@ export const signUpFormSchema = z
 		username: z
 			.string()
 			.min(1, 'auth.sign-up-page.form.errors.username.required')
-			.min(3, 'auth.sign-up-page.form.errors.username.minLength')
-			.regex(/^[a-z0-9_]*$/, 'auth.sign-up-page.form.errors.username.invalid'),
+			.min(
+				USERNAME_MIN_LENGTH,
+				'auth.sign-up-page.form.errors.username.minLength',
+			)
+			.regex(USERNAME_REGEX, 'auth.sign-up-page.form.errors.username.invalid'),
 		email: z
 			.string()
 			.min(1, 'auth.sign-up-page.form.errors.email.required')
@@ -17,7 +26,10 @@ export const signUpFormSchema = z
 		password: z
 			.string()
 			.min(1, 'auth.sign-up-page.form.errors.password.required')
-			.min(6, 'auth.sign-up-page.form.errors.password.minLength'),
+			.min(
+				PASSWORD_MIN_LENGTH,
+				'auth.sign-up-page.form.errors.password.minLength',
+			),
 		confirmPassword: z
 			.string()
 			.min(1, 'auth.sign-up-page.form.errors.confirmPassword.required'),
@@ -26,6 +38,6 @@ export const signUpFormSchema = z
 		}),
 	})
 	.refine(({ password, confirmPassword }) => password === confirmPassword, {
-		message: 'confirmPassword.notMatch',
+		message: 'auth.sign-up-page.form.errors.confirmPassword.notMatch',
 		path: ['confirmPassword'],
 	});

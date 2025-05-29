@@ -12,7 +12,7 @@ import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
 import { useSignInForm } from './use-sign-in-form';
 
 export const SignInForm = () => {
-	const { form, t, onSubmit } = useSignInForm();
+	const { form, isPending, t, onSubmit } = useSignInForm();
 
 	return (
 		<Form {...form}>
@@ -61,7 +61,7 @@ export const SignInForm = () => {
 						<I18nLink href="#">{t('forgotPassword')}</I18nLink>
 					</Link>
 				</div>
-				<Button type="submit" fullWidth>
+				<Button type="submit" isLoading={isPending} fullWidth>
 					{t('submit')}
 				</Button>
 			</form>

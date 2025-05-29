@@ -49,6 +49,9 @@
 	],
 	"references": [
 		{
+			"path": "../../libs/nextagram/shared/server"
+		},
+		{
 			"path": "../../libs/nextagram/shared/ui"
 		},
 		{

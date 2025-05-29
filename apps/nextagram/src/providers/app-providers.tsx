@@ -1,5 +1,7 @@
 import { NextIntlClientProvider } from '@nextagram/nextagram-shared-i18n';
 
+import { TanStackQueryProvider } from './tanstack-query-provider';
+
 import type { ReactNode } from 'react';
 
 type AppProvidersProps = Readonly<{
@@ -7,5 +9,7 @@ type AppProvidersProps = Readonly<{
 }>;
 
 export const AppProviders = ({ children }: AppProvidersProps) => (
-	<NextIntlClientProvider messages={null}>{children}</NextIntlClientProvider>
+	<NextIntlClientProvider messages={null}>
+		<TanStackQueryProvider>{children}</TanStackQueryProvider>
+	</NextIntlClientProvider>
 );
