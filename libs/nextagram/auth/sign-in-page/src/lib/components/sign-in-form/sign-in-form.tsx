@@ -3,8 +3,8 @@
 import {
 	Form,
 	FormField,
-	FormItemWrapper,
-	RowFormItemWrapper,
+	FormItem,
+	FormItemRow,
 } from '@nextagram/nextagram-shared-forms';
 import { Link as I18nLink } from '@nextagram/nextagram-shared-i18n';
 import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
@@ -21,27 +21,27 @@ export const SignInForm = () => {
 					control={form.control}
 					name="login"
 					render={({ field }) => (
-						<FormItemWrapper label={t('login')}>
+						<FormItem label={t('login')}>
 							<Input
 								autoComplete="username"
 								placeholder={t('login')}
 								{...field}
 							/>
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="password"
 					render={({ field }) => (
-						<FormItemWrapper label={t('password')}>
+						<FormItem label={t('password')}>
 							<Input
 								type="password"
 								autoComplete="current-password"
 								placeholder={t('password')}
 								{...field}
 							/>
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<div className="flex items-center justify-between">
@@ -49,12 +49,12 @@ export const SignInForm = () => {
 						control={form.control}
 						name="rememberMe"
 						render={({ field }) => (
-							<RowFormItemWrapper label={t('rememberMe')}>
+							<FormItemRow label={t('rememberMe')}>
 								<Checkbox
 									checked={field.value}
 									onCheckedChange={field.onChange}
 								/>
-							</RowFormItemWrapper>
+							</FormItemRow>
 						)}
 					/>
 					<Link asChild>

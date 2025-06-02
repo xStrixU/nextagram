@@ -3,8 +3,8 @@
 import {
 	Form,
 	FormField,
-	FormItemWrapper,
-	RowFormItemWrapper,
+	FormItem,
+	FormItemRow,
 } from '@nextagram/nextagram-shared-forms';
 import { Link as I18nLink } from '@nextagram/nextagram-shared-i18n';
 import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
@@ -21,66 +21,66 @@ export const SignUpForm = () => {
 					control={form.control}
 					name="fullName"
 					render={({ field }) => (
-						<FormItemWrapper label={t('fullName')}>
+						<FormItem label={t('fullName')}>
 							<Input placeholder={t('fullName')} {...field} />
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="username"
 					render={({ field }) => (
-						<FormItemWrapper label={t('username')}>
+						<FormItem label={t('username')}>
 							<Input
 								autoComplete="username"
 								placeholder={t('username')}
 								{...field}
 							/>
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="email"
 					render={({ field }) => (
-						<FormItemWrapper label={t('email')}>
+						<FormItem label={t('email')}>
 							<Input autoComplete="email" placeholder={t('email')} {...field} />
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="password"
 					render={({ field }) => (
-						<FormItemWrapper label={t('password')}>
+						<FormItem label={t('password')}>
 							<Input
 								type="password"
 								autoComplete="new-password"
 								placeholder={t('password')}
 								{...field}
 							/>
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="confirmPassword"
 					render={({ field }) => (
-						<FormItemWrapper label={t('confirmPassword')}>
+						<FormItem label={t('confirmPassword')}>
 							<Input
 								type="password"
 								autoComplete="new-password"
 								placeholder={t('confirmPassword')}
 								{...field}
 							/>
-						</FormItemWrapper>
+						</FormItem>
 					)}
 				/>
 				<FormField
 					control={form.control}
 					name="termsAndConditions"
 					render={({ field }) => (
-						<RowFormItemWrapper
+						<FormItemRow
 							label={t.rich('termsAndConditions', {
 								link: chunks => (
 									<Link decoration="underline" color="inherit" asChild>
@@ -93,7 +93,7 @@ export const SignUpForm = () => {
 								checked={field.value}
 								onCheckedChange={field.onChange}
 							/>
-						</RowFormItemWrapper>
+						</FormItemRow>
 					)}
 				/>
 				<Button type="submit" isLoading={isPending} fullWidth>

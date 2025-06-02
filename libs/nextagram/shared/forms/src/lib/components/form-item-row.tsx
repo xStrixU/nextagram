@@ -8,19 +8,19 @@ import {
 
 import type { ReactNode } from 'react';
 
-type RowFormItemWrapperProps = Readonly<{
+type FormItemRowProps = Readonly<{
 	label: ReactNode;
 	description?: string;
 	i18n?: boolean;
 	children: ReactNode;
 }>;
 
-export const RowFormItemWrapper = ({
+export const FormItemRow = ({
 	label,
 	description,
 	i18n,
 	children,
-}: RowFormItemWrapperProps) => (
+}: FormItemRowProps) => (
 	<FormItem>
 		<div className="flex gap-3">
 			<FormControl>{children}</FormControl>
