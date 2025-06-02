@@ -35,6 +35,12 @@
 		},
 		{
 			"path": "./libs/nextagram/shared/server"
+		},
+		{
+			"path": "./libs/nextagram/index-page"
+		},
+		{
+			"path": "./libs/nextagram/layout"
 		}
 	]
 }

@@ -1,5 +1,5 @@
 {
-	"extends": "../../../../tsconfig.base.json",
+	"extends": "../../../tsconfig.base.json",
 	"compilerOptions": {
 		"outDir": "dist",
 		"types": [
@@ -32,7 +32,7 @@
 	"include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
 	"references": [
 		{
-			"path": "../utils/styling/tsconfig.lib.json"
+			"path": "../shared/i18n/tsconfig.lib.json"
 		}
 	]
 }

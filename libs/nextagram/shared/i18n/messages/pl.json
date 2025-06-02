@@ -1,6 +1,6 @@
 {
 	"IndexPage": {
-		"title": "Witaj, {username}!"
+		"title": "Strona Główna"
 	},
 	"shared": {
 		"errors": {
@@ -86,6 +86,22 @@
 				"subject": "Zweryfikuj swój adres email",
 				"text": "Kliknij w link, aby zweryfikować swój adres email: {url}"
 			}
+		}
+	},
+	"layout": {
+		"sidebar": {
+			"a11y": {
+				"logo": "Logo Nextagram, wróć do strony głównej",
+				"nav": "Główna nawigacja strony"
+			},
+			"navigation": {
+				"index": "Strona Główna",
+				"search": "Szukaj",
+				"messages": "Wiadomości",
+				"notifications": "Powiadomienia",
+				"profile": "Profil"
+			},
+			"createButton": "Utwórz"
 		}
 	}
 }

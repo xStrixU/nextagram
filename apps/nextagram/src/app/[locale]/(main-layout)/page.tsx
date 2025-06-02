@@ -1,8 +1,5 @@
-import { Suspense } from 'react';
-
+import { IndexPage as IndexPageFeature } from '@nextagram/nextagram-index-page';
 import { setRequestLocale } from '@nextagram/nextagram-shared-i18n';
-
-import { Title } from './title';
 
 import type { LocaleParams } from '@nextagram/nextagram-shared-i18n';
 
@@ -15,13 +12,7 @@ const IndexPage = async ({ params }: IndexPageProps) => {
 
 	setRequestLocale(locale);
 
-	return (
-		<main className="flex h-screen flex-col items-center justify-center gap-6">
-			<Suspense fallback={<p>...</p>}>
-				<Title />
-			</Suspense>
-		</main>
-	);
+	return <IndexPageFeature />;
 };
 
 export default IndexPage;

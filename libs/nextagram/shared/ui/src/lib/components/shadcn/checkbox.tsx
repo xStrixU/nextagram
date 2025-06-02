@@ -1,8 +1,8 @@
 'use client';
 
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { CheckIcon } from 'lucide-react';
 import * as React from 'react';
+import { GoCheck } from 'react-icons/go';
 
 import { cn } from '@nextagram/nextagram-shared-utils-styling';
 
@@ -23,7 +23,7 @@ function Checkbox({
 				data-slot="checkbox-indicator"
 				className="flex items-center justify-center text-current transition-none"
 			>
-				<CheckIcon className="size-3.5" />
+				<GoCheck className="size-3.5" />
 			</CheckboxPrimitive.Indicator>
 		</CheckboxPrimitive.Root>
 	);
