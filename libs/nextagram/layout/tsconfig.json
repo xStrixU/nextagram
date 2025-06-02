@@ -3,11 +3,14 @@
 	"include": [],
 	"references": [
 		{
-			"path": "../utils/styling"
+			"path": "../shared/ui"
+		},
+		{
+			"path": "../shared/i18n"
 		},
 		{
 			"path": "./tsconfig.lib.json"
 		}
 	],
-	"extends": "../../../../tsconfig.base.json"
+	"extends": "../../../tsconfig.base.json"
 }

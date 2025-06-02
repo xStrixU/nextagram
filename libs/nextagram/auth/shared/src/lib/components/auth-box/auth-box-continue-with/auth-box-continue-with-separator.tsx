@@ -8,8 +8,8 @@ export const AuthBoxContinueWithSeparator = async () => {
 		<p
 			className={cn(
 				'flex items-center text-sm font-medium text-nowrap',
-				'before:mr-6 before:h-px before:w-full before:bg-neutral-300',
-				'after:ml-6 after:h-px after:w-full after:bg-neutral-300',
+				'before:bg-separator before:mr-6 before:h-px before:w-full',
+				'after:bg-separator after:ml-6 after:h-px after:w-full',
 			)}
 		>
 			{t('content')}

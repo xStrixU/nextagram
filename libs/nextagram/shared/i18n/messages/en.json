@@ -1,6 +1,6 @@
 {
 	"IndexPage": {
-		"title": "Welcome, {username}!"
+		"title": "Index Page"
 	},
 	"shared": {
 		"errors": {
@@ -86,6 +86,22 @@
 				"subject": "Verify your email address",
 				"text": "Click the link to verify your email: {url}"
 			}
+		}
+	},
+	"layout": {
+		"sidebar": {
+			"a11y": {
+				"logo": "Nextagram logo, go to the index page",
+				"nav": "Main navigation of the page"
+			},
+			"navigation": {
+				"index": "Home Page",
+				"search": "Search",
+				"messages": "Messages",
+				"notifications": "Notifications",
+				"profile": "Profile"
+			},
+			"createButton": "Create"
 		}
 	}
 }

@@ -5,4 +5,9 @@
 
 @theme {
 	--default-font-family: var(--font-inter);
+
+	--color-separator: var(--color-neutral-300);
+
+	--spacing-sidebar: 18rem;
+	--spacing-sidebar-collapsed: 4.625rem;
 }
