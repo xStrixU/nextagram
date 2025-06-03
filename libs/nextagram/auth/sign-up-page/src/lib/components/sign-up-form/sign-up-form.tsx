@@ -12,11 +12,11 @@ import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
 import { useSignUpForm } from './use-sign-up-form';
 
 export const SignUpForm = () => {
-	const { form, isPending, t, onSubmit } = useSignUpForm();
+	const { form, isPending, t, handleUserCreate } = useSignUpForm();
 
 	return (
 		<Form {...form}>
-			<form onSubmit={onSubmit} className="space-y-7">
+			<form onSubmit={handleUserCreate} className="space-y-7">
 				<FormField
 					control={form.control}
 					name="fullName"

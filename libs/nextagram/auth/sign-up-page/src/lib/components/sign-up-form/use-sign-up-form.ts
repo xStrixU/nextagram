@@ -24,7 +24,7 @@ export const useSignUpForm = () => {
 	const t = useTranslations('auth.sign-up-page.form');
 	const tShared = useTranslations('shared');
 
-	const onSubmit = form.handleSubmit(
+	const handleUserCreate = form.handleSubmit(
 		async ({ username, email, password, fullName }) => {
 			try {
 				await createUser({
@@ -60,5 +60,5 @@ export const useSignUpForm = () => {
 		},
 	);
 
-	return { form, isPending, t, onSubmit };
+	return { form, isPending, t, handleUserCreate };
 };

@@ -5,6 +5,11 @@
 	"shared": {
 		"errors": {
 			"unexpected": "Coś poszło nie tak."
+		},
+		"ui": {
+			"dialog": {
+				"close": "Zamknij"
+			}
 		}
 	},
 	"auth": {
@@ -101,7 +106,35 @@
 				"notifications": "Powiadomienia",
 				"profile": "Profil"
 			},
-			"createButton": "Utwórz"
+			"create-post-dialog": {
+				"trigger": "Utwórz",
+				"title": "Utwórz nowy post",
+				"media": {
+					"upload": {
+						"description": "Przeciągnij zdjęcia i filmy tutaj",
+						"button": "Wybierz z komputera"
+					},
+					"files": {
+						"item": {
+							"description": "Media numer {number}",
+							"remove": "Usuń media numer {number}",
+							"preview-dialog": {
+								"title": "Podgląd zjęcia",
+								"alt": "Podgląd"
+							}
+						}
+					}
+				},
+				"form": {
+					"description": "Opis posta",
+					"submit": "Udostępnij",
+					"errors": {
+						"description": {
+							"required": "Podaj opis posta"
+						}
+					}
+				}
+			}
 		}
 	}
 }
