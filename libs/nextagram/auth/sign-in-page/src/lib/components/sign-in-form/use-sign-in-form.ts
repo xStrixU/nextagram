@@ -21,7 +21,7 @@ export const useSignInForm = () => {
 	const t = useTranslations('auth.sign-in-page.form');
 	const tShared = useTranslations('shared');
 
-	const onSubmit = form.handleSubmit(
+	const handleSessionCreate = form.handleSubmit(
 		async ({ login, password, rememberMe }) => {
 			try {
 				await createSession({ login, password, rememberMe });
@@ -51,5 +51,5 @@ export const useSignInForm = () => {
 		},
 	);
 
-	return { form, isPending, t, onSubmit };
+	return { form, isPending, t, handleSessionCreate };
 };

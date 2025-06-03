@@ -15,9 +15,6 @@
 		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
 	},
 	"nxCloudId": "683166939d59043cee4a625b",
-	"sync": {
-		"applyChanges": true
-	},
 	"plugins": [
 		{
 			"plugin": "@nx/js/typescript",

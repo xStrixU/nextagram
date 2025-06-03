@@ -5,6 +5,11 @@
 	"shared": {
 		"errors": {
 			"unexpected": "Something went wrong."
+		},
+		"ui": {
+			"dialog": {
+				"close": "Close"
+			}
 		}
 	},
 	"auth": {
@@ -101,7 +106,31 @@
 				"notifications": "Notifications",
 				"profile": "Profile"
 			},
-			"createButton": "Create"
+			"create-post-dialog": {
+				"trigger": "Create",
+				"title": "Create new post",
+				"media": {
+					"upload": {
+						"description": "Drag photos and videos here",
+						"button": "Select from the computer"
+					},
+					"files": {
+						"item": {
+							"description": "Media number {number}",
+							"remove": "Remove media number {number}"
+						}
+					}
+				},
+				"form": {
+					"description": "Post description",
+					"submit": "Share",
+					"errors": {
+						"description": {
+							"required": "Post description is required"
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,4 +1,6 @@
 export {
+	GoArrowLeft as ArrowLeft,
+	GoArrowRight as ArrowRight,
 	GoBell as Bell,
 	GoBellFill as BelFill,
 	GoHome as Home,
@@ -7,6 +9,8 @@ export {
 	GoPlus as Plus,
 	GoSearch as Search,
 } from 'react-icons/go';
+export { IoIosImages as Images } from 'react-icons/io';
+export { IoClose as Close } from 'react-icons/io5';
 export { LuLoaderCircle as Loader } from 'react-icons/lu';
 
 export { Google } from './lib/components/icons/google';

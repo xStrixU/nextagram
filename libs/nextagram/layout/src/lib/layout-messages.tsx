@@ -15,7 +15,9 @@ export const LayoutMessages = ({ children }: LayoutMessagesProps) => {
 	const messages = useMessages();
 
 	return (
-		<NextIntlClientProvider messages={pick(messages, 'layout')}>
+		<NextIntlClientProvider
+			messages={pick(messages, 'shared.ui.dialog', 'layout')}
+		>
 			{children}
 		</NextIntlClientProvider>
 	);

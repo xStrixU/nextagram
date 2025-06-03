@@ -12,11 +12,11 @@ import { Button, Checkbox, Input, Link } from '@nextagram/nextagram-shared-ui';
 import { useSignInForm } from './use-sign-in-form';
 
 export const SignInForm = () => {
-	const { form, isPending, t, onSubmit } = useSignInForm();
+	const { form, isPending, t, handleSessionCreate } = useSignInForm();
 
 	return (
 		<Form {...form}>
-			<form onSubmit={onSubmit} className="space-y-7">
+			<form onSubmit={handleSessionCreate} className="space-y-7">
 				<FormField
 					control={form.control}
 					name="login"

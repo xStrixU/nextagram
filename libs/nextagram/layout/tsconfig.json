@@ -3,7 +3,13 @@
 	"include": [],
 	"references": [
 		{
+			"path": "../shared/utils/context"
+		},
+		{
 			"path": "../shared/ui"
+		},
+		{
+			"path": "../shared/forms"
 		},
 		{
 			"path": "../shared/i18n"
