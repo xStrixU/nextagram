@@ -117,7 +117,11 @@
 					"files": {
 						"item": {
 							"description": "Media number {number}",
-							"remove": "Remove media number {number}"
+							"remove": "Remove media number {number}",
+							"preview-dialog": {
+								"title": "Image preview",
+								"alt": "Preview"
+							}
 						}
 					}
 				},

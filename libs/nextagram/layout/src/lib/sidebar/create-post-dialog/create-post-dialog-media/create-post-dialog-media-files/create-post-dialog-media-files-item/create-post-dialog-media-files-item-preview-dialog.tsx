@@ -1,3 +1,4 @@
+import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { Dialog } from '@nextagram/nextagram-shared-ui';
 
 import type { ReactNode } from 'react';
@@ -10,12 +11,18 @@ type CreatePostDialogMediaFilesItemPreviewDialogProps = Readonly<{
 export const CreatePostDialogMediaFilesItemPreviewDialog = ({
 	file,
 	children,
-}: CreatePostDialogMediaFilesItemPreviewDialogProps) => (
-	<Dialog trigger={children} title="Podgląd zdjęcia">
-		<img
-			src={URL.createObjectURL(file)}
-			alt="Podgląd"
-			className="w-full rounded-md object-contain"
-		/>
-	</Dialog>
-);
+}: CreatePostDialogMediaFilesItemPreviewDialogProps) => {
+	const t = useTranslations(
+		'layout.sidebar.create-post-dialog.media.files.item.preview-dialog',
+	);
+
+	return (
+		<Dialog trigger={children} title={t('title')}>
+			<img
+				src={URL.createObjectURL(file)}
+				alt={t('alt')}
+				className="w-full rounded-md object-contain"
+			/>
+		</Dialog>
+	);
+};
