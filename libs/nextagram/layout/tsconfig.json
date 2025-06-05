@@ -6,13 +6,16 @@
 			"path": "../shared/utils/context"
 		},
 		{
+			"path": "../shared/i18n"
+		},
+		{
 			"path": "../shared/ui"
 		},
 		{
 			"path": "../shared/forms"
 		},
 		{
-			"path": "../shared/i18n"
+			"path": "../shared/server"
 		},
 		{
 			"path": "./tsconfig.lib.json"

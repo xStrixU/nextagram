@@ -106,6 +106,21 @@
 				"notifications": "Notifications",
 				"profile": "Profile"
 			},
+			"dropdown-menu": {
+				"trigger": "More",
+				"editProfile": "Edit Profile",
+				"selectLanguage": {
+					"trigger": "Select language",
+					"options": {
+						"en": "English",
+						"pl": "Polish"
+					}
+				},
+				"logout": {
+					"trigger": "Log out",
+					"success": "You have been logged out"
+				}
+			},
 			"create-post-dialog": {
 				"trigger": "Create",
 				"title": "Create new post",

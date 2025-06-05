@@ -1,4 +1,5 @@
 import { SidebarCreateButton } from './sidebar-create-button';
+import { SidebarDropdownMenu } from './sidebar-dropdown-menu/sidebar-dropdown-menu';
 import { SidebarLogo } from './sidebar-logo/sidebar-logo';
 import { SidebarNavigation } from './sidebar-navigation/sidebar-navigation';
 
@@ -9,5 +10,6 @@ export const Sidebar = () => (
 		<div className="hidden sm:block md:w-full">
 			<SidebarCreateButton />
 		</div>
+		<SidebarDropdownMenu />
 	</header>
 );

@@ -1,3 +1,6 @@
+export { toast } from 'sonner';
+export { Slot } from '@radix-ui/react-slot';
+
 export { Button } from './lib/components/shadcn/button';
 export {
 	Carousel,
@@ -7,6 +10,23 @@ export {
 	CarouselPrevious,
 } from './lib/components/shadcn/carousel';
 export { Checkbox } from './lib/components/shadcn/checkbox';
+export {
+	DropdownMenu,
+	DropdownMenuCheckboxItem,
+	DropdownMenuContent,
+	DropdownMenuGroup,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuPortal,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
+	DropdownMenuSeparator,
+	DropdownMenuShortcut,
+	DropdownMenuSub,
+	DropdownMenuSubContent,
+	DropdownMenuSubTrigger,
+	DropdownMenuTrigger,
+} from './lib/components/shadcn/dropdown-menu';
 export {
 	Form,
 	FormControl,

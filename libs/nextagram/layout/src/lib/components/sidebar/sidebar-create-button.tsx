@@ -4,7 +4,7 @@ import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { Button } from '@nextagram/nextagram-shared-ui';
 import { Plus } from '@nextagram/nextagram-shared-ui/icons';
 
-import { CreatePostDialog } from './create-post-dialog/create-post-dialog';
+import { CreatePostDialog } from '../create-post-dialog/create-post-dialog';
 
 import type { ComponentProps } from 'react';
 
