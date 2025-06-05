@@ -1,9 +1,8 @@
-import { toast } from 'sonner';
-
 import { useZodForm } from '@nextagram/nextagram-shared-forms';
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { useRouter } from '@nextagram/nextagram-shared-i18n';
 import { isAuthError } from '@nextagram/nextagram-shared-server/client';
+import { toast } from '@nextagram/nextagram-shared-ui';
 
 import { useCreateUser } from '../../api/client/use-create-user';
 import { signUpFormSchema } from './sign-up-form.schema';
