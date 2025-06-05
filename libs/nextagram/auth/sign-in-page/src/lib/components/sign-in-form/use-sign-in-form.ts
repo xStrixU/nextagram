@@ -24,6 +24,8 @@ export const useSignInForm = () => {
 		async ({ login, password, rememberMe }) => {
 			try {
 				await createSession({ login, password, rememberMe });
+
+				toast(t('success'));
 				router.push('/');
 			} catch (error) {
 				if (isAuthError(error)) {
