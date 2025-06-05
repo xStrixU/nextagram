@@ -33,6 +33,7 @@
 				"rememberMe": "Remember me",
 				"forgotPassword": "Forgot password?",
 				"submit": "Sign In",
+				"success": "You have been logged in",
 				"errors": {
 					"invalidCredentials": "Invalid login or password",
 					"verifyEmail": "Verify your email address",

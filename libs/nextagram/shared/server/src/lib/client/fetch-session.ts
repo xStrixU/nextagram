@@ -1,6 +1,6 @@
 import { betterFetch } from '@better-fetch/fetch';
 
-import type { auth } from '../shared/auth';
+import type { auth } from '../shared/auth/auth';
 
 type Session = typeof auth.$Infer.Session;
 

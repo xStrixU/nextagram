@@ -9,14 +9,26 @@ import {
 	PASSWORD_MIN_LENGTH,
 	USERNAME_MIN_LENGTH,
 	USERNAME_REGEX,
-} from './constants';
-import { db } from './database/db';
-import * as schema from './database/schema';
-import { sendEmail } from './email';
+} from '../constants';
+import { db } from '../database/db';
+import * as schema from '../database/schema';
+import { sendEmail } from '../email';
+
+import 'better-auth/social-providers';
+
+import { env } from '@nextagram/nextagram-shared-env';
+
+import { generateSocialUsername } from './generate-social-username';
 
 import type { Locale } from '@nextagram/nextagram-shared-i18n';
 
 export const auth = betterAuth({
+	account: {
+		accountLinking: {
+			enabled: true,
+			trustedProviders: ['facebook', 'google'],
+		},
+	},
 	emailAndPassword: {
 		enabled: true,
 		requireEmailVerification: true,
@@ -39,6 +51,34 @@ export const auth = betterAuth({
 				subject: t('subject'),
 				text: t('text', { url }),
 			});
+		},
+	},
+	socialProviders: {
+		facebook: {
+			clientId: env.FACEBOOK_CLIENT_ID,
+			clientSecret: env.FACEBOOK_CLIENT_SECRET,
+			mapProfileToUser: async profile => {
+				const username = await generateSocialUsername(profile.name);
+
+				return {
+					username,
+					name: profile.name,
+					email: profile.email,
+				};
+			},
+		},
+		google: {
+			clientId: env.GOOGLE_CLIENT_ID,
+			clientSecret: env.GOOGLE_CLIENT_SECRET,
+			mapProfileToUser: async profile => {
+				const username = await generateSocialUsername(profile.name);
+
+				return {
+					username,
+					name: profile.name,
+					email: profile.email,
+				};
+			},
 		},
 	},
 	plugins: [
