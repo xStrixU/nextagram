@@ -2,9 +2,9 @@ import { useZodForm } from '@nextagram/nextagram-shared-forms';
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { useRouter } from '@nextagram/nextagram-shared-i18n';
 import { isAuthError } from '@nextagram/nextagram-shared-server/client';
+import { useCreateSession } from '@nextagram/nextagram-shared-session';
 import { toast } from '@nextagram/nextagram-shared-ui';
 
-import { useCreateSession } from '../../api/client/use-create-session';
 import { signInFormSchema } from './sign-in-form.schema';
 
 export const useSignInForm = () => {

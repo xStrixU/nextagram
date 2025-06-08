@@ -1,7 +1,6 @@
 import { useRouter, useTranslations } from '@nextagram/nextagram-shared-i18n';
+import { useDeleteCurrentSession } from '@nextagram/nextagram-shared-session';
 import { toast } from '@nextagram/nextagram-shared-ui';
-
-import { useDeleteCurrentSession } from '../../../../api/use-delete-current-session';
 
 export const useSidebarDropdownMenuLogoutItem = () => {
 	const router = useRouter();

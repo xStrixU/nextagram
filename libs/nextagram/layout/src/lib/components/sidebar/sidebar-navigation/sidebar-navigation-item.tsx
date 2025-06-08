@@ -1,3 +1,5 @@
+'use client';
+
 import { ActiveLink } from '@nextagram/nextagram-shared-i18n/components';
 
 import { SidebarItem } from '../sidebar-item';
