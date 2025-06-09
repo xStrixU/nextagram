@@ -44,6 +44,9 @@
 		},
 		{
 			"path": "./libs/nextagram/shared/utils/context"
+		},
+		{
+			"path": "./libs/nextagram/shared/session"
 		}
 	]
 }

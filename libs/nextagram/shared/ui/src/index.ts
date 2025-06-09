@@ -1,6 +1,11 @@
 export { toast } from 'sonner';
 export { Slot } from '@radix-ui/react-slot';
 
+export {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
+} from './lib/components/shadcn/avatar';
 export { Button } from './lib/components/shadcn/button';
 export {
 	Carousel,

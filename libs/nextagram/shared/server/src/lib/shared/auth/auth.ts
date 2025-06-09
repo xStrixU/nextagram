@@ -5,6 +5,7 @@ import * as cookie from 'cookie';
 
 import { getTranslations, routing } from '@nextagram/nextagram-shared-i18n';
 
+import * as usersService from '../../users/users.service';
 import {
 	PASSWORD_MIN_LENGTH,
 	USERNAME_MIN_LENGTH,
@@ -18,9 +19,13 @@ import 'better-auth/social-providers';
 
 import { env } from '@nextagram/nextagram-shared-env';
 
+import { getUserProfilePictureName } from '../../users/users.utils';
+import { createThumbnailURL } from '../utils/create-thumbnail-url';
 import { generateSocialUsername } from './generate-social-username';
 
 import type { Locale } from '@nextagram/nextagram-shared-i18n';
+
+import type { User } from '../../users/users.types';
 
 export const auth = betterAuth({
 	account: {
@@ -97,4 +102,20 @@ export const auth = betterAuth({
 		},
 		usePlural: true,
 	}),
+	databaseHooks: {
+		user: {
+			create: {
+				after: async user => {
+					const image = createThumbnailURL(
+						getUserProfilePictureName(user as User),
+					);
+
+					await usersService.resetProfilePicture(user as User);
+					await usersService.updateById(user.id, {
+						image,
+					});
+				},
+			},
+		},
+	},
 });
