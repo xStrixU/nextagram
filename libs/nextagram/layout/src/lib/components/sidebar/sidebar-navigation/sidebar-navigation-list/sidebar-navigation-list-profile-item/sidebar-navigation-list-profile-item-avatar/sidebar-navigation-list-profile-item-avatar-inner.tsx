@@ -1,21 +1,12 @@
 import { getCurrentSession } from '@nextagram/nextagram-shared-session/server';
-import {
-	Avatar,
-	AvatarFallback,
-	AvatarImage,
-} from '@nextagram/nextagram-shared-ui';
+import { UserAvatar } from '@nextagram/nextagram-shared-users';
 
 export const SidebarNavigationListProfileItemAvatarInner = async () => {
 	const { user } = await getCurrentSession();
 
-	if (!user?.image) {
+	if (!user) {
 		return null;
 	}
 
-	return (
-		<Avatar>
-			<AvatarImage src={user.image} />
-			<AvatarFallback />
-		</Avatar>
-	);
+	return <UserAvatar user={user} />;
 };

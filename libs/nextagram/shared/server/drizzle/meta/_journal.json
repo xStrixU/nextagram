@@ -8,6 +8,20 @@
 			"when": 1748535879960,
 			"tag": "0000_add_auth",
 			"breakpoints": true
+		},
+		{
+			"idx": 1,
+			"version": "7",
+			"when": 1749470358311,
+			"tag": "0001_add_user_biography",
+			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "7",
+			"when": 1749626778800,
+			"tag": "0002_make_user_image_not_null",
+			"breakpoints": true
 		}
 	]
 }

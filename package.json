@@ -23,11 +23,13 @@
 		"class-variance-authority": "0.7.1",
 		"clsx": "2.1.1",
 		"cookie": "1.0.2",
+		"date-fns": "4.1.0",
 		"drizzle-orm": "0.43.1",
 		"embla-carousel-react": "8.6.0",
 		"lodash": "4.17.21",
 		"next": "15.4.0-canary.54",
 		"next-intl": "4.1.0",
+		"next-safe-action": "8.0.2",
 		"next-themes": "0.4.6",
 		"nodemailer": "7.0.3",
 		"path-to-regexp": "8.2.0",
@@ -39,6 +41,7 @@
 		"sonner": "2.0.3",
 		"tailwind-merge": "3.3.0",
 		"zod": "3.25.49",
+		"zod-form-data": "3.0.0",
 		"zustand": "5.0.5"
 	},
 	"devDependencies": {

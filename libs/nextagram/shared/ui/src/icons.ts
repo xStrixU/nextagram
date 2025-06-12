@@ -11,6 +11,7 @@ export {
 	GoMail as Mail,
 	GoPlus as Plus,
 	GoSearch as Search,
+	GoTrash as Trash,
 } from 'react-icons/go';
 export { IoIosImages as Images } from 'react-icons/io';
 export {

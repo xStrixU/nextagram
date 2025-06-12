@@ -3,12 +3,9 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
 
-import {
-	Check,
-	ChevronRight,
-	CircleFill,
-} from '@nextagram/nextagram-shared-ui/icons';
 import { cn } from '@nextagram/nextagram-shared-utils-styling';
+
+import { Check, ChevronRight, CircleFill } from '../../../icons';
 
 function DropdownMenu({
 	...props

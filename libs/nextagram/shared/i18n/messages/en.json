@@ -4,7 +4,8 @@
 	},
 	"shared": {
 		"errors": {
-			"unexpected": "Something went wrong."
+			"unexpected": "Something went wrong.",
+			"unauthenticated": "You are not unauthenticated."
 		},
 		"ui": {
 			"dialog": {
@@ -147,6 +148,34 @@
 					"errors": {
 						"description": {
 							"required": "Post description is required"
+						}
+					}
+				}
+			},
+			"edit-profile-dialog": {
+				"title": "Edit profile",
+				"profile-picture": {
+					"title": "Profile picture",
+					"reset": {
+						"label": "Delete photo",
+						"success": "Profile picture has been deleted"
+					},
+					"upload": {
+						"label": "Change photo",
+						"success": "Profile picture has been changed"
+					}
+				},
+				"public-information": {
+					"title": "Public information",
+					"form": {
+						"fullName": "Full name",
+						"biography": "Biography",
+						"submit": "Save",
+						"success": "Public information has been updated",
+						"errors": {
+							"fullName": {
+								"required": "Full name is required"
+							}
 						}
 					}
 				}

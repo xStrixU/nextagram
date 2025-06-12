@@ -1,0 +1,22 @@
+{
+	"name": "@nextagram/nextagram-shared-users",
+	"version": "0.0.1",
+	"private": true,
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.ts",
+			"default": "./src/index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"nx": {
+		"name": "nextagram-shared-users",
+		"tags": [
+			"scope:nextagram",
+			"type:shared"
+		]
+	}
+}

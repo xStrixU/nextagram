@@ -4,7 +4,8 @@
 	},
 	"shared": {
 		"errors": {
-			"unexpected": "Coś poszło nie tak."
+			"unexpected": "Coś poszło nie tak.",
+			"unauthenticated": "Nie jesteś zalogowany."
 		},
 		"ui": {
 			"dialog": {
@@ -147,6 +148,34 @@
 					"errors": {
 						"description": {
 							"required": "Podaj opis posta"
+						}
+					}
+				}
+			},
+			"edit-profile-dialog": {
+				"title": "Edytuj profil",
+				"profile-picture": {
+					"title": "Zdjęcie profilowe",
+					"reset": {
+						"label": "Usuń zdjęcie",
+						"success": "Zdjęcie profilowe zostało usunięte"
+					},
+					"upload": {
+						"label": "Zmień zdjęcie",
+						"success": "Zdjęcie profilowe zostało zmienione"
+					}
+				},
+				"public-information": {
+					"title": "Informacje publiczne",
+					"form": {
+						"fullName": "Imię i nazwisko",
+						"biography": "Biografia",
+						"submit": "Zapisz",
+						"success": "Informacje publiczne zostały zaktualizowane",
+						"errors": {
+							"fullName": {
+								"required": "Podaj imię i nazwisko"
+							}
 						}
 					}
 				}

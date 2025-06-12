@@ -9,7 +9,8 @@ export const usersTable = pgTable('users', {
 	emailVerified: boolean('email_verified')
 		.$defaultFn(() => false)
 		.notNull(),
-	image: text('image'),
+	image: text('image').notNull(),
+	biography: text('biography').notNull().default(''),
 	createdAt: timestamp('created_at')
 		.$defaultFn(() => /* @__PURE__ */ new Date())
 		.notNull(),

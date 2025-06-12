@@ -33,7 +33,7 @@
 	"include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
 	"references": [
 		{
-			"path": "../shared/session/tsconfig.lib.json"
+			"path": "../shared/users/tsconfig.lib.json"
 		},
 		{
 			"path": "../shared/utils/context/tsconfig.lib.json"
@@ -46,6 +46,15 @@
 		},
 		{
 			"path": "../shared/forms/tsconfig.lib.json"
+		},
+		{
+			"path": "../shared/session/tsconfig.lib.json"
+		},
+		{
+			"path": "../shared/server/tsconfig.lib.json"
+		},
+		{
+			"path": "../shared/actions/tsconfig.lib.json"
 		}
 	]
 }

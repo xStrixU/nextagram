@@ -1,4 +1,4 @@
-import { uploadLocalFile } from '../shared/storage/file-storage';
+import { uploadFile, uploadLocalFile } from '../shared/storage/file-storage';
 import { DEFAULT_PROFILE_PICTURE_PATH } from './users.constants';
 import * as usersRepository from './users.repository';
 import { getUserProfilePictureName } from './users.utils';
@@ -43,4 +43,21 @@ export const resetProfilePicture = async (user: User) => {
 		path: DEFAULT_PROFILE_PICTURE_PATH,
 		name: getUserProfilePictureName(user),
 	});
+	await updateById(user.id, { updatedAt: new Date() });
+};
+
+interface UpdateProfilePictureParams {
+	user: User;
+	file: File;
+}
+
+export const updateProfilePicture = async ({
+	user,
+	file,
+}: UpdateProfilePictureParams) => {
+	await uploadFile({
+		body: Buffer.from(await file.arrayBuffer()),
+		name: getUserProfilePictureName(user),
+	});
+	await updateById(user.id, { updatedAt: new Date() });
 };
