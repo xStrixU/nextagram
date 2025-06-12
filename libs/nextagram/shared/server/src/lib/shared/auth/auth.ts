@@ -34,6 +34,19 @@ export const auth = betterAuth({
 			trustedProviders: ['facebook', 'google'],
 		},
 	},
+	user: {
+		additionalFields: {
+			biography: {
+				type: 'string',
+			},
+			image: {
+				type: 'string',
+			},
+			username: {
+				type: 'string',
+			},
+		},
+	},
 	emailAndPassword: {
 		enabled: true,
 		requireEmailVerification: true,

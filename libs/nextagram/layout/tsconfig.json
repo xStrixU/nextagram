@@ -3,7 +3,7 @@
 	"include": [],
 	"references": [
 		{
-			"path": "../shared/session"
+			"path": "../shared/users"
 		},
 		{
 			"path": "../shared/utils/context"
@@ -16,6 +16,15 @@
 		},
 		{
 			"path": "../shared/forms"
+		},
+		{
+			"path": "../shared/session"
+		},
+		{
+			"path": "../shared/server"
+		},
+		{
+			"path": "../shared/actions"
 		},
 		{
 			"path": "./tsconfig.lib.json"
