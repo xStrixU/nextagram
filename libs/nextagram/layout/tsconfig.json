@@ -3,9 +3,6 @@
 	"include": [],
 	"references": [
 		{
-			"path": "../shared/users"
-		},
-		{
 			"path": "../shared/utils/context"
 		},
 		{

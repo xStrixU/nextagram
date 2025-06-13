@@ -19,8 +19,6 @@ import 'better-auth/social-providers';
 
 import { env } from '@nextagram/nextagram-shared-env';
 
-import { getUserProfilePictureName } from '../../users/users.utils';
-import { createThumbnailURL } from '../utils/create-thumbnail-url';
 import { generateSocialUsername } from './generate-social-username';
 
 import type { Locale } from '@nextagram/nextagram-shared-i18n';
@@ -119,13 +117,9 @@ export const auth = betterAuth({
 		user: {
 			create: {
 				after: async user => {
-					const image = createThumbnailURL(
-						getUserProfilePictureName(user as User),
-					);
-
-					await usersService.resetProfilePicture(user as User);
-					await usersService.updateById(user.id, {
-						image,
+					await usersService.updateProfilePicture({
+						user: user as User,
+						file: null,
 					});
 				},
 			},
