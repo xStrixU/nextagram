@@ -1,5 +1,9 @@
 import { getCurrentSession } from '@nextagram/nextagram-shared-session/server';
-import { UserAvatar } from '@nextagram/nextagram-shared-users';
+import {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
+} from '@nextagram/nextagram-shared-ui';
 
 export const EditProfileDialogProfilePictureSectionAvatarInner = async () => {
 	const { user } = await getCurrentSession();
@@ -8,5 +12,10 @@ export const EditProfileDialogProfilePictureSectionAvatarInner = async () => {
 		return null;
 	}
 
-	return <UserAvatar user={user} size={128} />;
+	return (
+		<Avatar className="size-32">
+			<AvatarImage src={`${user.image}?width=128&height=128`} />
+			<AvatarFallback />
+		</Avatar>
+	);
 };

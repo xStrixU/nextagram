@@ -1,6 +1,10 @@
 import fs from 'node:fs/promises';
 
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import {
+	DeleteObjectCommand,
+	PutObjectCommand,
+	S3Client,
+} from '@aws-sdk/client-s3';
 
 import { env } from '@nextagram/nextagram-shared-env';
 
@@ -39,4 +43,17 @@ export const uploadLocalFile = async ({
 	const body = await fs.readFile(path);
 
 	await uploadFile({ name, body });
+};
+
+interface DeleteFileParams {
+	name: string;
+}
+
+export const deleteFile = async ({ name }: DeleteFileParams) => {
+	const command = new DeleteObjectCommand({
+		Bucket: env.S3_BUCKET_NAME,
+		Key: name,
+	});
+
+	await s3.send(command);
 };

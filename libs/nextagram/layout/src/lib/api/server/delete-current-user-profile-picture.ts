@@ -19,7 +19,7 @@ export const deleteCurrentUserProfilePicture = actionClient
 			throw new UnauthenticatedError();
 		}
 
-		await usersService.resetProfilePicture(user);
+		await usersService.updateProfilePicture({ user, file: null });
 
 		revalidatePath('[locale]', 'layout');
 	});

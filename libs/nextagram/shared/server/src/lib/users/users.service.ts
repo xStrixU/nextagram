@@ -1,4 +1,9 @@
-import { uploadFile, uploadLocalFile } from '../shared/storage/file-storage';
+import {
+	deleteFile,
+	uploadFile,
+	uploadLocalFile,
+} from '../shared/storage/file-storage';
+import { createThumbnailURL } from '../shared/utils/create-thumbnail-url';
 import { DEFAULT_PROFILE_PICTURE_PATH } from './users.constants';
 import * as usersRepository from './users.repository';
 import { getUserProfilePictureName } from './users.utils';
@@ -38,26 +43,39 @@ export const updateById = async (
 	return updatedUser;
 };
 
-export const resetProfilePicture = async (user: User) => {
-	await uploadLocalFile({
-		path: DEFAULT_PROFILE_PICTURE_PATH,
-		name: getUserProfilePictureName(user),
-	});
-	await updateById(user.id, { updatedAt: new Date() });
-};
-
 interface UpdateProfilePictureParams {
 	user: User;
-	file: File;
+	file: File | null;
 }
 
 export const updateProfilePicture = async ({
 	user,
 	file,
 }: UpdateProfilePictureParams) => {
-	await uploadFile({
-		body: Buffer.from(await file.arrayBuffer()),
-		name: getUserProfilePictureName(user),
+	const profilePictureVersion = Number(user.image?.split('_').at(-1) ?? 0);
+
+	if (profilePictureVersion > 0) {
+		await deleteFile({
+			name: getUserProfilePictureName(user, profilePictureVersion),
+		});
+	}
+
+	const profilePictureName = getUserProfilePictureName(
+		user,
+		profilePictureVersion + 1,
+	);
+	const image = createThumbnailURL(profilePictureName);
+
+	await updateById(user.id, {
+		image,
 	});
-	await updateById(user.id, { updatedAt: new Date() });
+	await (file
+		? uploadFile({
+				body: Buffer.from(await file.arrayBuffer()),
+				name: profilePictureName,
+			})
+		: uploadLocalFile({
+				path: DEFAULT_PROFILE_PICTURE_PATH,
+				name: profilePictureName,
+			}));
 };
