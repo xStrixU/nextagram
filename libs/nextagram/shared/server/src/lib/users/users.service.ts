@@ -1,10 +1,10 @@
 import {
 	deleteFile,
 	uploadFile,
-	uploadLocalFile,
+	uploadFileFromUrl,
 } from '../shared/storage/file-storage';
 import { createThumbnailURL } from '../shared/utils/create-thumbnail-url';
-import { DEFAULT_PROFILE_PICTURE_PATH } from './users.constants';
+import { DEFAULT_PROFILE_PICTURE_URL } from './users.constants';
 import * as usersRepository from './users.repository';
 import { getUserProfilePictureName } from './users.utils';
 
@@ -74,8 +74,8 @@ export const updateProfilePicture = async ({
 				body: Buffer.from(await file.arrayBuffer()),
 				name: profilePictureName,
 			})
-		: uploadLocalFile({
-				path: DEFAULT_PROFILE_PICTURE_PATH,
+		: uploadFileFromUrl({
+				url: DEFAULT_PROFILE_PICTURE_URL,
 				name: profilePictureName,
 			}));
 };

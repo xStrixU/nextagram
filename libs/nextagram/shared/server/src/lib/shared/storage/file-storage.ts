@@ -1,5 +1,3 @@
-import fs from 'node:fs/promises';
-
 import {
 	DeleteObjectCommand,
 	PutObjectCommand,
@@ -31,18 +29,21 @@ export const uploadFile = async ({ name, body }: UploadFileParams) => {
 	await s3.send(command);
 };
 
-interface UploadLocalFileParams {
-	path: string;
+interface UploadFileFromUrlParams {
+	url: string;
 	name: string;
 }
 
-export const uploadLocalFile = async ({
-	path,
+export const uploadFileFromUrl = async ({
+	url,
 	name,
-}: UploadLocalFileParams) => {
-	const body = await fs.readFile(path);
+}: UploadFileFromUrlParams) => {
+	const arrayBuffer = await fetch(url).then(res => res.arrayBuffer());
 
-	await uploadFile({ name, body });
+	await uploadFile({
+		name,
+		body: Buffer.from(arrayBuffer),
+	});
 };
 
 interface DeleteFileParams {
