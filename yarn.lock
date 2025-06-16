@@ -3215,7 +3215,7 @@
   resolved "https://registry.yarnpkg.com/@noble/ciphers/-/ciphers-0.6.0.tgz#a3d82c72ce71ba43128e7eb71757b5ecb75b1273"
   integrity sha512-mIbq/R9QXk5/cTfESb1OKtyFnk7oc1Om/8onA1158K9/OZUQFDEVy55jVTato+xmp3XX6F6Qh0zz0Nc1AxAlRQ==
 
-"@noble/hashes@^1.6.1":
+"@noble/hashes@^1.1.5", "@noble/hashes@^1.6.1":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.8.0.tgz#cee43d801fcef9644b11b8194857695acd5f815a"
   integrity sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==
@@ -3594,6 +3594,13 @@
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@oxc-resolver/binding-win32-x64-msvc/-/binding-win32-x64-msvc-5.3.0.tgz#9c2c51c4bc664cec75946b8d4f971f6029cac890"
   integrity sha512-LT9eOPPUqfZscQRd5mc08RBeDWOQf+dnOrKnanMallTGPe6g7+rcAlFTA8SWoJbcD45PV8yArFtCmSQSpzHZmg==
+
+"@paralleldrive/cuid2@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@paralleldrive/cuid2/-/cuid2-2.2.2.tgz#7f91364d53b89e2c9cb9e02e8dd0f129e834455f"
+  integrity sha512-ZOBkgDwEdoYVlSeRbYYXs0S9MejQofiVYoTbKzy/6GQa39/q5tQU2IX46+shYnUkpEl3wc+J6wRlar7r2EK2xA==
+  dependencies:
+    "@noble/hashes" "^1.1.5"
 
 "@parcel/watcher-android-arm64@2.5.1":
   version "2.5.1"
@@ -7738,6 +7745,13 @@ dotenv@~16.4.5:
   version "16.4.7"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.7.tgz#0e20c5b82950140aa99be360a8a5f52335f53c26"
   integrity sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==
+
+drizzle-cuid2@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/drizzle-cuid2/-/drizzle-cuid2-2.0.0.tgz#22a69655e8304f3337e201f744dc01fe8abbe359"
+  integrity sha512-w41SoJKzeRLmzsbaD7ZNIWeQQgQgwVklxlFWWhLw4T6pCBJwWW3NLJIS6n0Dh/KlGm330dev/nnlPIk8Q/YXMg==
+  dependencies:
+    "@paralleldrive/cuid2" "^2.2.2"
 
 drizzle-kit@0.31.1:
   version "0.31.1"

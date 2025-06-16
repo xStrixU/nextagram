@@ -14,12 +14,12 @@ const s3 = new S3Client({
 	},
 });
 
-interface UploadFileParams {
+interface UploadBufferParams {
 	name: string;
 	body: Buffer;
 }
 
-export const uploadFile = async ({ name, body }: UploadFileParams) => {
+export const uploadBuffer = async ({ name, body }: UploadBufferParams) => {
 	const command = new PutObjectCommand({
 		Bucket: env.S3_BUCKET_NAME,
 		Key: name,
@@ -27,6 +27,20 @@ export const uploadFile = async ({ name, body }: UploadFileParams) => {
 	});
 
 	await s3.send(command);
+};
+
+interface UploadFileParams {
+	name: string;
+	body: File;
+}
+
+export const uploadFile = async ({ name, body }: UploadFileParams) => {
+	const buffer = Buffer.from(await body.arrayBuffer());
+
+	await uploadBuffer({
+		name,
+		body: buffer,
+	});
 };
 
 interface UploadFileFromUrlParams {
@@ -40,7 +54,7 @@ export const uploadFileFromUrl = async ({
 }: UploadFileFromUrlParams) => {
 	const arrayBuffer = await fetch(url).then(res => res.arrayBuffer());
 
-	await uploadFile({
+	await uploadBuffer({
 		name,
 		body: Buffer.from(arrayBuffer),
 	});

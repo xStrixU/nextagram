@@ -3,6 +3,9 @@
 	"include": [],
 	"references": [
 		{
+			"path": "../session"
+		},
+		{
 			"path": "../i18n"
 		},
 		{

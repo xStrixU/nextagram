@@ -145,6 +145,7 @@
 				"form": {
 					"description": "Opis posta",
 					"submit": "Udostępnij",
+					"success": "Post został utworzony",
 					"errors": {
 						"description": {
 							"required": "Podaj opis posta"

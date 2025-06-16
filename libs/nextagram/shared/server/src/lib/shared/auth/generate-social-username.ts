@@ -1,4 +1,4 @@
-import * as usersService from '../../users/users.service';
+import { usersService } from '../../users';
 
 export const generateSocialUsername = (name: string) => {
 	const baseUsername = name.replaceAll(/\s+/g, '').toLowerCase();

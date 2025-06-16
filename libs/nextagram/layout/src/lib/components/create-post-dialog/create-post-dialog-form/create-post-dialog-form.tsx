@@ -5,8 +5,16 @@ import { Button, Textarea } from '@nextagram/nextagram-shared-ui';
 
 import { useCreatePostDialogForm } from './use-create-post-dialog-form';
 
-export const CreatePostDialogForm = () => {
-	const { form, handlePostCreate, t } = useCreatePostDialogForm();
+type CreatePostDialogFormProps = Readonly<{
+	onDialogClose: () => void;
+}>;
+
+export const CreatePostDialogForm = ({
+	onDialogClose,
+}: CreatePostDialogFormProps) => {
+	const { form, isPending, handlePostCreate, t } = useCreatePostDialogForm({
+		onDialogClose,
+	});
 
 	return (
 		<Form {...form}>
@@ -20,7 +28,7 @@ export const CreatePostDialogForm = () => {
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" fullWidth>
+				<Button type="submit" isLoading={isPending} fullWidth>
 					{t('submit')}
 				</Button>
 			</form>
