@@ -5,7 +5,7 @@ import * as cookie from 'cookie';
 
 import { getTranslations, routing } from '@nextagram/nextagram-shared-i18n';
 
-import * as usersService from '../../users/users.service';
+import { usersService } from '../../users';
 import {
 	PASSWORD_MIN_LENGTH,
 	USERNAME_MIN_LENGTH,

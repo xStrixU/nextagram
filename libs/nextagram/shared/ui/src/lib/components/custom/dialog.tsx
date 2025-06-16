@@ -10,7 +10,7 @@ import type { ComponentProps, ReactNode } from 'react';
 
 type DialogProps = Readonly<{
 	title: string;
-	trigger: ReactNode;
+	trigger?: ReactNode;
 }> &
 	ComponentProps<typeof ShadcnDialog>;
 

@@ -5,20 +5,22 @@ import { CreatePostDialogForm } from './create-post-dialog-form/create-post-dial
 import { CreatePostDialogMedia } from './create-post-dialog-media/create-post-dialog-media';
 import { CreatePostDialogStoreProvider } from './create-post-dialog.store';
 
-import type { ReactNode } from 'react';
-
 type CreatePostDialogProps = Readonly<{
-	children: ReactNode;
+	isOpen: boolean;
+	setIsOpen: (isOpen: boolean) => void;
 }>;
 
-export const CreatePostDialog = ({ children }: CreatePostDialogProps) => {
+export const CreatePostDialog = ({
+	isOpen,
+	setIsOpen,
+}: CreatePostDialogProps) => {
 	const t = useTranslations('layout.sidebar.create-post-dialog');
 
 	return (
-		<Dialog title={t('title')} trigger={children}>
+		<Dialog title={t('title')} open={isOpen} onOpenChange={setIsOpen}>
 			<CreatePostDialogStoreProvider>
 				<CreatePostDialogMedia />
-				<CreatePostDialogForm />
+				<CreatePostDialogForm onDialogClose={() => setIsOpen(false)} />
 			</CreatePostDialogStoreProvider>
 		</Dialog>
 	);

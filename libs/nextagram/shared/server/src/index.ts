@@ -6,6 +6,8 @@ export const authNextJsHandler = toNextJsHandler(auth);
 
 export { auth };
 
-export * as usersService from './lib/users/users.service';
+export { postsService } from './lib/posts';
+export { usersService } from './lib/users';
 
-export type { UserDto } from './lib/users/users.types';
+export type { Post, PostDto } from './lib/posts';
+export type { UserDto } from './lib/users';

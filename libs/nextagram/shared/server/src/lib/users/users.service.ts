@@ -51,7 +51,7 @@ interface UpdateProfilePictureParams {
 export const updateProfilePicture = async ({
 	user,
 	file,
-}: UpdateProfilePictureParams) => {
+}: UpdateProfilePictureParams): Promise<User | null> => {
 	const profilePictureVersion = Number(user.image?.split('_').at(-1) ?? 0);
 
 	if (profilePictureVersion > 0) {
@@ -66,16 +66,18 @@ export const updateProfilePicture = async ({
 	);
 	const image = createThumbnailURL(profilePictureName);
 
-	await updateById(user.id, {
+	const updatedUser = await updateById(user.id, {
 		image,
 	});
 	await (file
 		? uploadFile({
-				body: Buffer.from(await file.arrayBuffer()),
+				body: file,
 				name: profilePictureName,
 			})
 		: uploadFileFromUrl({
 				url: DEFAULT_PROFILE_PICTURE_URL,
 				name: profilePictureName,
 			}));
+
+	return updatedUser;
 };

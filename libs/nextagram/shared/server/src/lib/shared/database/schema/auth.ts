@@ -1,4 +1,7 @@
+import { relations } from 'drizzle-orm';
 import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
+
+import { postsTable } from './posts';
 
 export const usersTable = pgTable('users', {
 	id: text('id').primaryKey(),
@@ -9,7 +12,7 @@ export const usersTable = pgTable('users', {
 	emailVerified: boolean('email_verified')
 		.$defaultFn(() => false)
 		.notNull(),
-	image: text('image').notNull(),
+	image: text('image').notNull().default(''),
 	biography: text('biography').notNull().default(''),
 	createdAt: timestamp('created_at')
 		.$defaultFn(() => /* @__PURE__ */ new Date())
@@ -18,6 +21,10 @@ export const usersTable = pgTable('users', {
 		.$defaultFn(() => /* @__PURE__ */ new Date())
 		.notNull(),
 });
+
+export const usersTableRelations = relations(usersTable, ({ many }) => ({
+	posts: many(postsTable),
+}));
 
 export const sessionsTable = pgTable('sessions', {
 	id: text('id').primaryKey(),

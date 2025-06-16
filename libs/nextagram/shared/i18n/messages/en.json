@@ -145,6 +145,7 @@
 				"form": {
 					"description": "Post description",
 					"submit": "Share",
+					"success": "Post has been created",
 					"errors": {
 						"description": {
 							"required": "Post description is required"
