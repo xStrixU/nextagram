@@ -5,7 +5,7 @@ export type UserEntity = typeof usersTable.$inferSelect;
 export type User = (typeof auth.$Infer.Session)['user'];
 export type UserDto = Pick<
 	User,
-	'id' | 'username' | 'displayUsername' | 'image' | 'updatedAt'
+	'id' | 'username' | 'name' | 'image' | 'updatedAt'
 >;
 
 export type UserId = UserEntity['id'];

@@ -6,6 +6,8 @@ export {
 	GoBellFill as BelFill,
 	GoCheck as Check,
 	GoChevronRight as ChevronRight,
+	GoComment as Comment,
+	GoHeart as Heart,
 	GoHome as Home,
 	GoHomeFill as HomeFill,
 	GoMail as Mail,

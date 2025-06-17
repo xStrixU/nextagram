@@ -3,7 +3,19 @@
 	"include": [],
 	"references": [
 		{
+			"path": "../shared/utils/styling"
+		},
+		{
+			"path": "../shared/utils/dates"
+		},
+		{
 			"path": "../shared/i18n"
+		},
+		{
+			"path": "../shared/ui"
+		},
+		{
+			"path": "../shared/server"
 		},
 		{
 			"path": "./tsconfig.lib.json"

@@ -1,7 +1,4 @@
 {
-	"IndexPage": {
-		"title": "Index Page"
-	},
 	"shared": {
 		"errors": {
 			"unexpected": "Something went wrong.",
@@ -180,6 +177,17 @@
 						}
 					}
 				}
+			}
+		}
+	},
+	"index-page": {
+		"post": {
+			"imageDescription": "Image shared by {username}",
+			"likes": "Number of likes: {likes}",
+			"more": "More",
+			"actions": {
+				"like": "Like",
+				"comment": "Comment"
 			}
 		}
 	}

@@ -1,7 +1,3 @@
-import { getTranslations } from '@nextagram/nextagram-shared-i18n';
+import { PostList } from './components/post-list/post-list';
 
-export const IndexPage = async () => {
-	const t = await getTranslations('IndexPage');
-
-	return <h1 className="text-4xl font-bold">{t('title')}</h1>;
-};
+export const IndexPage = () => <PostList />;

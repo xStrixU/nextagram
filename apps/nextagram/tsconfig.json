@@ -68,6 +68,9 @@
 		},
 		{
 			"path": "../../libs/nextagram/shared/i18n"
+		},
+		{
+			"path": "../../libs/nextagram/shared/env"
 		}
 	]
 }

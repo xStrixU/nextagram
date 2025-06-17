@@ -6,7 +6,7 @@ export {
 	useLocale,
 	hasLocale,
 } from 'next-intl';
-export { getTranslations, setRequestLocale } from 'next-intl/server';
+export { getTranslations, getLocale, setRequestLocale } from 'next-intl/server';
 
 export {
 	Link,
