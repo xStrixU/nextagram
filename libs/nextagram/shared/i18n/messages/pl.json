@@ -1,7 +1,4 @@
 {
-	"IndexPage": {
-		"title": "Strona Główna"
-	},
 	"shared": {
 		"errors": {
 			"unexpected": "Coś poszło nie tak.",
@@ -180,6 +177,17 @@
 						}
 					}
 				}
+			}
+		}
+	},
+	"index-page": {
+		"post": {
+			"imageDescription": "Obrazek udostępniony przez {username}",
+			"likes": "Liczba polubień: {likes}",
+			"more": "Więcej",
+			"actions": {
+				"like": "Polajkuj",
+				"comment": "Skomentuj"
 			}
 		}
 	}

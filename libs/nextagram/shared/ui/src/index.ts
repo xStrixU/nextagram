@@ -42,6 +42,7 @@ export {
 	FormMessage,
 } from './lib/components/shadcn/form';
 export { Input } from './lib/components/shadcn/input';
+export { Skeleton } from './lib/components/shadcn/skeleton';
 export { Toaster } from './lib/components/shadcn/sonner';
 export { Textarea } from './lib/components/shadcn/textarea';
 

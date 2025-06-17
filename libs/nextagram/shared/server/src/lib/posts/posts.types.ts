@@ -1,7 +1,12 @@
 import type { postsTable } from '../shared/database/schema';
+import type { User, UserDto } from '../users';
+import type { UserEntity } from '../users/users.types';
 
-export type PostEntity = typeof postsTable.$inferSelect;
-export type Post = PostEntity;
-export type PostDto = PostEntity;
+export type PostEntity = typeof postsTable.$inferSelect & {
+	author: UserEntity;
+};
+
+export type Post = PostEntity & { author: User };
+export type PostDto = PostEntity & { author: UserDto };
 
 export type PostId = PostEntity['id'];

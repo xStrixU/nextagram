@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 
 import { authActionClient } from '@nextagram/nextagram-shared-actions';
@@ -31,4 +32,6 @@ export const createPost = authActionClient
 	.inputSchema(inputSchema)
 	.action(async ({ ctx: { user }, parsedInput: { description, files } }) => {
 		await postsService.create({ description, files, author: user });
+
+		revalidatePath('/');
 	});

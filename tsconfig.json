@@ -50,6 +50,9 @@
 		},
 		{
 			"path": "./libs/nextagram/shared/actions"
+		},
+		{
+			"path": "./libs/nextagram/shared/utils/dates"
 		}
 	]
 }
