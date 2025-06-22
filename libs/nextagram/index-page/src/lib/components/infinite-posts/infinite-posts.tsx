@@ -24,7 +24,7 @@ export const InfinitePosts = () => {
 		<div
 			ref={parentRef}
 			style={{ height: bodyHeight }}
-			className="overflow-y-auto px-2 py-4 contain-strict"
+			className="overflow-y-auto px-2 pt-4 pb-12 contain-strict sm:pb-4"
 		>
 			<div
 				style={{
