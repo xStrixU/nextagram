@@ -1,7 +1,7 @@
-import { getTranslations } from '@nextagram/nextagram-shared-i18n';
+import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 
-export const PostLikes = async () => {
-	const t = await getTranslations('index-page.post');
+export const PostLikes = () => {
+	const t = useTranslations('index-page.post');
 
 	return <p className="text-sm font-semibold">{t('likes', { likes: 0 })}</p>;
 };

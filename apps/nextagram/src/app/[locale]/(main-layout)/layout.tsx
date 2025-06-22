@@ -18,7 +18,7 @@ const MainLayout = async ({ params, children }: MainLayoutProps) => {
 	return (
 		<LayoutMessages>
 			<Sidebar />
-			<main className="sm:pl-sidebar-collapsed md:pl-sidebar h-full grow px-2 pb-12 sm:pb-0">
+			<main className="sm:pl-sidebar-collapsed md:pl-sidebar h-full grow pb-12 sm:pb-0">
 				{children}
 			</main>
 		</LayoutMessages>

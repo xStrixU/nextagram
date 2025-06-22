@@ -1,5 +1,3 @@
-'use client';
-
 import { cn } from '@nextagram/nextagram-shared-utils-styling';
 
 import { usePostDescription } from './use-post-description';

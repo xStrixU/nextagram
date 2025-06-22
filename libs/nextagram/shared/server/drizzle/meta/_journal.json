@@ -50,6 +50,13 @@
 			"when": 1750064896646,
 			"tag": "0006_add_created_at_and_updated_at_tp_posts",
 			"breakpoints": true
+		},
+		{
+			"idx": 7,
+			"version": "7",
+			"when": 1750630454539,
+			"tag": "0007_add_users_indices",
+			"breakpoints": true
 		}
 	]
 }

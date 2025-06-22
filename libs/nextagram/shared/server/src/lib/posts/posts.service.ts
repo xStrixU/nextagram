@@ -5,8 +5,15 @@ import * as postsRepository from './posts.repository';
 import type { User } from '../users/users.types';
 import type { Post, PostId } from './posts.types';
 
-export const getAll = async (): Promise<Post[]> => {
-	const posts = await postsRepository.getAll();
+interface GetAllParams {
+	cursor?: string;
+	limit?: number;
+}
+
+export const getAll = async ({ cursor, limit }: GetAllParams = {}): Promise<
+	Post[]
+> => {
+	const posts = await postsRepository.getAll({ cursor, limit });
 
 	return posts;
 };

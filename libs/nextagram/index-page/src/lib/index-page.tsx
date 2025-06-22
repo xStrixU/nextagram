@@ -1,3 +1,8 @@
-import { PostList } from './components/post-list/post-list';
+import { IndexPageMessages } from './components/index-page-messages';
+import { InfinitePosts } from './components/infinite-posts/infinite-posts';
 
-export const IndexPage = () => <PostList />;
+export const IndexPage = () => (
+	<IndexPageMessages>
+		<InfinitePosts />
+	</IndexPageMessages>
+);

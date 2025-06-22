@@ -1,4 +1,4 @@
-import { getLocale } from '@nextagram/nextagram-shared-i18n';
+import { useLocale } from '@nextagram/nextagram-shared-i18n';
 import {
 	formatDistanceToNow,
 	locales,
@@ -8,10 +8,10 @@ type PostAuthorTimestampProps = Readonly<{
 	postCreatedAt: Date;
 }>;
 
-export const PostAuthorTimestamp = async ({
+export const PostAuthorTimestamp = ({
 	postCreatedAt,
 }: PostAuthorTimestampProps) => {
-	const locale = await getLocale();
+	const locale = useLocale();
 
 	return (
 		<p className="text-sm font-semibold text-neutral-500">

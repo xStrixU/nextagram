@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { getTranslations } from '@nextagram/nextagram-shared-i18n';
+import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import {
 	Carousel,
 	CarouselContent,
@@ -15,8 +15,8 @@ type PostFilesCarouselProps = Readonly<{
 	post: PostDto;
 }>;
 
-export const PostFilesCarousel = async ({ post }: PostFilesCarouselProps) => {
-	const t = await getTranslations('index-page.post');
+export const PostFilesCarousel = ({ post }: PostFilesCarouselProps) => {
+	const t = useTranslations('index-page.post');
 
 	return (
 		<Carousel>
