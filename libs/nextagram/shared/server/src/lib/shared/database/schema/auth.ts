@@ -1,26 +1,33 @@
 import { relations } from 'drizzle-orm';
-import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
+import { boolean, index, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
 import { postsTable } from './posts';
 
-export const usersTable = pgTable('users', {
-	id: text('id').primaryKey(),
-	name: text('name').notNull(),
-	username: text('username').notNull().unique(),
-	displayUsername: text('display_username'),
-	email: text('email').notNull().unique(),
-	emailVerified: boolean('email_verified')
-		.$defaultFn(() => false)
-		.notNull(),
-	image: text('image').notNull().default(''),
-	biography: text('biography').notNull().default(''),
-	createdAt: timestamp('created_at')
-		.$defaultFn(() => /* @__PURE__ */ new Date())
-		.notNull(),
-	updatedAt: timestamp('updated_at')
-		.$defaultFn(() => /* @__PURE__ */ new Date())
-		.notNull(),
-});
+export const usersTable = pgTable(
+	'users',
+	{
+		id: text('id').primaryKey(),
+		name: text('name').notNull(),
+		username: text('username').notNull().unique(),
+		displayUsername: text('display_username'),
+		email: text('email').notNull().unique(),
+		emailVerified: boolean('email_verified')
+			.$defaultFn(() => false)
+			.notNull(),
+		image: text('image').notNull().default(''),
+		biography: text('biography').notNull().default(''),
+		createdAt: timestamp('created_at')
+			.$defaultFn(() => /* @__PURE__ */ new Date())
+			.notNull(),
+		updatedAt: timestamp('updated_at')
+			.$defaultFn(() => /* @__PURE__ */ new Date())
+			.notNull(),
+	},
+	t => [
+		index('created_at_index').on(t.createdAt),
+		index('created_at_and_id_index').on(t.createdAt, t.id),
+	],
+);
 
 export const usersTableRelations = relations(usersTable, ({ many }) => ({
 	posts: many(postsTable),

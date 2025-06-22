@@ -5,11 +5,31 @@ import { postsTable } from '../shared/database/schema';
 
 import type { PostEntity, PostId } from './posts.types';
 
-export const getAll = async (): Promise<PostEntity[]> => {
+interface GetAllParams {
+	cursor?: string;
+	limit?: number;
+}
+
+export const getAll = async ({
+	cursor,
+	limit = 5,
+}: GetAllParams): Promise<PostEntity[]> => {
+	const cursorPost = cursor ? await getById(cursor) : null;
 	const posts = await db.query.postsTable.findMany({
+		limit,
 		with: {
 			author: true,
 		},
+		where: (postsTable, { and, gt, or }) =>
+			cursorPost
+				? or(
+						gt(postsTable.createdAt, cursorPost.createdAt),
+						and(
+							eq(postsTable.createdAt, cursorPost.createdAt),
+							gt(postsTable.id, cursorPost.id),
+						),
+					)
+				: undefined,
 	});
 
 	return posts;

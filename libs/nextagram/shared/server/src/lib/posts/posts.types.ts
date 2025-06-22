@@ -5,8 +5,9 @@ import type { UserEntity } from '../users/users.types';
 export type PostEntity = typeof postsTable.$inferSelect & {
 	author: UserEntity;
 };
-
 export type Post = PostEntity & { author: User };
-export type PostDto = PostEntity & { author: UserDto };
+export type PostDto = Omit<PostEntity, 'author' | 'authorId' | 'updatedAt'> & {
+	author: UserDto;
+};
 
 export type PostId = PostEntity['id'];
