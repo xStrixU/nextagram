@@ -66,3 +66,26 @@ export const updateById = async (
 
 	return updatedPost;
 };
+
+interface ToggleLikeByIdParams {
+	id: PostId;
+	user: User;
+}
+
+export const toggleLikeById = async ({
+	id,
+	user,
+}: ToggleLikeByIdParams): Promise<Post | null> => {
+	const post = await getById(id);
+
+	if (!post) {
+		return null;
+	}
+
+	const isLiked = post.likes.some(({ userId }) => userId === user.id);
+	const action = isLiked
+		? postsRepository.unlikeById
+		: postsRepository.likeById;
+
+	return action({ id, userId: user.id });
+};

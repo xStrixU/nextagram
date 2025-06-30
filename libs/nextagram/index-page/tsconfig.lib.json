@@ -39,10 +39,13 @@
 			"path": "../shared/utils/dates/tsconfig.lib.json"
 		},
 		{
+			"path": "../shared/ui/tsconfig.lib.json"
+		},
+		{
 			"path": "../shared/i18n/tsconfig.lib.json"
 		},
 		{
-			"path": "../shared/ui/tsconfig.lib.json"
+			"path": "../shared/actions/tsconfig.lib.json"
 		},
 		{
 			"path": "../shared/server/tsconfig.lib.json"

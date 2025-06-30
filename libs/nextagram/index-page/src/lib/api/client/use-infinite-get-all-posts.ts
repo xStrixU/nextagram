@@ -6,9 +6,9 @@ interface GetAllPostsParams {
 	cursor: string | null;
 }
 
-interface GetAllPostsResponse {
+export interface GetAllPostsResponse {
 	posts: PostDto[];
-	nextCursor?: string;
+	nextCursor?: string | null;
 }
 
 const getAllPosts = async ({

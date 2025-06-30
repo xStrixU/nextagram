@@ -1,7 +1,11 @@
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 
-export const PostLikes = () => {
+type PostLikesProps = Readonly<{
+	likes: number;
+}>;
+
+export const PostLikes = ({ likes }: PostLikesProps) => {
 	const t = useTranslations('index-page.post');
 
-	return <p className="text-sm font-semibold">{t('likes', { likes: 0 })}</p>;
+	return <p className="text-sm font-semibold">{t('likes', { likes })}</p>;
 };

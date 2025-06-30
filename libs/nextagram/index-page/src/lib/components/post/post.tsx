@@ -20,8 +20,8 @@ export const Post = ({ post }: PostProps) => {
 			<PostAuthor author={post.author} postCreatedAt={post.createdAt} />
 			<PostFilesCarousel post={post} />
 			<div className="space-y-1.5">
-				<PostActions />
-				<PostLikes />
+				<PostActions post={post} />
+				<PostLikes likes={post.likes} />
 				<PostDescription post={post} messages={{ more: t('more') }} />
 			</div>
 		</article>
