@@ -8,6 +8,7 @@ export {
 	GoChevronRight as ChevronRight,
 	GoComment as Comment,
 	GoHeart as Heart,
+	GoHeartFill as HeartFill,
 	GoHome as Home,
 	GoHomeFill as HomeFill,
 	GoMail as Mail,

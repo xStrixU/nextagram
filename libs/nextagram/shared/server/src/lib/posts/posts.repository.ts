@@ -1,7 +1,7 @@
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 
 import { db } from '../shared/database/db';
-import { postsTable } from '../shared/database/schema';
+import { postLikesTable, postsTable } from '../shared/database/schema';
 
 import type { PostEntity, PostId } from './posts.types';
 
@@ -19,6 +19,7 @@ export const getAll = async ({
 		limit,
 		with: {
 			author: true,
+			likes: true,
 		},
 		where: (postsTable, { and, gt, or }) =>
 			cursorPost
@@ -40,6 +41,7 @@ export const getById = async (id: PostId): Promise<PostEntity | null> => {
 		where: eq(postsTable.id, id),
 		with: {
 			author: true,
+			likes: true,
 		},
 	});
 
@@ -78,6 +80,41 @@ export const updateById = async (
 		.set(post)
 		.where(eq(postsTable.id, id))
 		.returning();
+
+	return getById(id);
+};
+
+interface LikeByIdParams {
+	id: PostId;
+	userId: string;
+}
+
+export const likeById = async ({
+	id,
+	userId,
+}: LikeByIdParams): Promise<PostEntity | null> => {
+	await db
+		.insert(postLikesTable)
+		.values({ postId: id, userId })
+		.onConflictDoNothing();
+
+	return getById(id);
+};
+
+interface UnlikeByIdParams {
+	id: PostId;
+	userId: string;
+}
+
+export const unlikeById = async ({
+	id,
+	userId,
+}: UnlikeByIdParams): Promise<PostEntity | null> => {
+	await db
+		.delete(postLikesTable)
+		.where(
+			and(eq(postLikesTable.postId, id), eq(postLikesTable.userId, userId)),
+		);
 
 	return getById(id);
 };

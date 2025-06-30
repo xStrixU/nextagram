@@ -9,10 +9,13 @@
 			"path": "../shared/utils/dates"
 		},
 		{
+			"path": "../shared/ui"
+		},
+		{
 			"path": "../shared/i18n"
 		},
 		{
-			"path": "../shared/ui"
+			"path": "../shared/actions"
 		},
 		{
 			"path": "../shared/server"
