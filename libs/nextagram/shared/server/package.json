@@ -17,8 +17,10 @@
 			"default": "./src/index.ts"
 		},
 		"./package.json": "./package.json",
-		"./client": "./src/client.ts",
-		"./middleware": "./src/middleware.ts"
+		"./auth": "./src/auth.ts",
+		"./auth/client": "./src/auth-client.ts",
+		"./auth/middleware": "./src/auth-middleware.ts",
+		"./constants": "./src/constants.ts"
 	},
 	"nx": {
 		"name": "nextagram-shared-server",

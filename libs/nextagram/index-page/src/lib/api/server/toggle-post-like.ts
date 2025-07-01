@@ -2,7 +2,10 @@
 
 import { zfd } from 'zod-form-data';
 
-import { authActionClient } from '@nextagram/nextagram-shared-actions';
+import {
+	authActionClient,
+	mapPostToPostDto,
+} from '@nextagram/nextagram-shared-actions';
 import { postsService } from '@nextagram/nextagram-shared-server';
 
 const inputSchema = zfd.formData({
@@ -14,5 +17,5 @@ export const togglePostLike = authActionClient
 	.action(async ({ ctx: { user }, parsedInput: { postId } }) => {
 		const post = await postsService.toggleLikeById({ id: postId, user });
 
-		return post;
+		return post && mapPostToPostDto(post);
 	});

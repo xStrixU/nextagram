@@ -1,7 +1,7 @@
 import { useZodForm } from '@nextagram/nextagram-shared-forms';
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { useRouter } from '@nextagram/nextagram-shared-i18n';
-import { isAuthError } from '@nextagram/nextagram-shared-server/client';
+import { isAuthError } from '@nextagram/nextagram-shared-server/auth/client';
 import { toast } from '@nextagram/nextagram-shared-ui';
 
 import { useCreateUser } from '../../api/client/use-create-user';

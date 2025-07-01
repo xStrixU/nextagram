@@ -2,7 +2,7 @@ import { PostAuthorAvatar } from './post-author-avatar';
 import { PostAuthorTimestamp } from './post-author-timestamp';
 import { PostAuthorUsername } from './post-author-username';
 
-import type { UserDto } from '@nextagram/nextagram-shared-server';
+import type { UserDto } from '@nextagram/nextagram-shared-actions';
 
 type PostAuthorProps = Readonly<{
 	author: UserDto;

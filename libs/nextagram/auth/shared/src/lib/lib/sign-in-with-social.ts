@@ -1,4 +1,4 @@
-import { authClient } from '@nextagram/nextagram-shared-server/client';
+import { authClient } from '@nextagram/nextagram-shared-server/auth/client';
 
 type SocialProvider = 'facebook' | 'google';
 

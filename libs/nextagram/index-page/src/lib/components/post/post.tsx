@@ -6,7 +6,7 @@ import { PostDescription } from './post-description/post-description';
 import { PostFilesCarousel } from './post-files-carousel';
 import { PostLikes } from './post-likes';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 type PostProps = Readonly<{
 	post: PostDto;

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { pathToRegexp } from 'path-to-regexp';
 
 import i18nMiddleware from '@nextagram/nextagram-shared-i18n/middleware';
-import { fetchSession } from '@nextagram/nextagram-shared-server/middleware';
+import { fetchSession } from '@nextagram/nextagram-shared-server/auth/middleware';
 
 import type { NextRequest } from 'next/server';
 

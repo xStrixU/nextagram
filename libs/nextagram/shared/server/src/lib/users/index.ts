@@ -1,3 +1,3 @@
 export * as usersService from './users.service';
 
-export type { User, UserDto } from './users.types';
+export type { User } from './users.types';

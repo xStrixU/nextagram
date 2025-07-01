@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 interface GetAllPostsParams {
 	cursor: string | null;

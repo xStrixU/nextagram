@@ -3,7 +3,7 @@ import { Heart, HeartFill } from '@nextagram/nextagram-shared-ui/icons';
 import { PostActionsButton } from '../post-actions-button';
 import { usePostActionsLikeButton } from './use-post-actions-like-button';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 type PostActionsLikeButtonProps = Readonly<{
 	'aria-label': string;

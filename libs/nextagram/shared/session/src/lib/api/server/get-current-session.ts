@@ -1,6 +1,6 @@
 import { headers } from 'next/headers';
 
-import { auth } from '@nextagram/nextagram-shared-server';
+import { auth } from '@nextagram/nextagram-shared-server/auth';
 
 export const getCurrentSession = async () => {
 	const session = await auth.api.getSession({

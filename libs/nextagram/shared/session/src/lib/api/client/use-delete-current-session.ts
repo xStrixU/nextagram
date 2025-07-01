@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { authClient } from '@nextagram/nextagram-shared-server/client';
+import { authClient } from '@nextagram/nextagram-shared-server/auth/client';
 
 const deleteCurrentSessionFn = async () => {
 	const { data, error } = await authClient.signOut();
