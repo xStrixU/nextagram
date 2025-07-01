@@ -1,7 +1,11 @@
 import { and, eq } from 'drizzle-orm';
 
 import { db } from '../shared/database/db';
-import { postLikesTable, postsTable } from '../shared/database/schema';
+import {
+	postCommentsTable,
+	postLikesTable,
+	postsTable,
+} from '../shared/database/schema';
 
 import type { PostEntity, PostId } from './posts.types';
 
@@ -20,6 +24,7 @@ export const getAll = async ({
 		with: {
 			author: true,
 			likes: true,
+			comments: true,
 		},
 		where: (postsTable, { and, gt, or }) =>
 			cursorPost
@@ -42,6 +47,7 @@ export const getById = async (id: PostId): Promise<PostEntity | null> => {
 		with: {
 			author: true,
 			likes: true,
+			comments: true,
 		},
 	});
 
@@ -115,6 +121,25 @@ export const unlikeById = async ({
 		.where(
 			and(eq(postLikesTable.postId, id), eq(postLikesTable.userId, userId)),
 		);
+
+	return getById(id);
+};
+
+interface CommentByIdParams {
+	id: PostId;
+	userId: string;
+	content: string;
+}
+
+export const commentById = async ({
+	id,
+	userId,
+	content,
+}: CommentByIdParams): Promise<PostEntity | null> => {
+	await db
+		.insert(postCommentsTable)
+		.values({ postId: id, userId, content })
+		.onConflictDoNothing();
 
 	return getById(id);
 };

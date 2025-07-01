@@ -1,6 +1,7 @@
 import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 
 import { PostActions } from './post-actions/post-actions';
+import { PostAddCommentForm } from './post-add-comment-form/post-add-comment-form';
 import { PostAuthor } from './post-author/post-author';
 import { PostDescription } from './post-description/post-description';
 import { PostFilesCarousel } from './post-files-carousel';
@@ -23,6 +24,7 @@ export const Post = ({ post }: PostProps) => {
 				<PostActions post={post} />
 				<PostLikes likes={post.likes} />
 				<PostDescription post={post} messages={{ more: t('more') }} />
+				<PostAddCommentForm postId={post.id} />
 			</div>
 		</article>
 	);
