@@ -2,7 +2,7 @@ import { cn } from '@nextagram/nextagram-shared-utils-styling';
 
 import { usePostDescription } from './use-post-description';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 type PostDescriptionProps = Readonly<{
 	post: PostDto;

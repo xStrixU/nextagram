@@ -1,9 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 
-import {
-	EMAIL_REGEX,
-	authClient,
-} from '@nextagram/nextagram-shared-server/client';
+import { authClient } from '@nextagram/nextagram-shared-server/auth/client';
+import { EMAIL_REGEX } from '@nextagram/nextagram-shared-server/constants';
 
 interface CreateSessionFnParams {
 	login: string;

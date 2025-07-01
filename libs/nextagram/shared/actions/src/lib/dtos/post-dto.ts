@@ -1,4 +1,16 @@
-import type { Post, PostDto } from '@nextagram/nextagram-shared-server';
+import type { Post } from '@nextagram/nextagram-shared-server';
+
+import type { UserDto } from './user-dto';
+
+export interface PostDto {
+	id: string;
+	description: string;
+	files: string[];
+	createdAt: Date;
+	author: UserDto;
+	likes: number;
+	isLiked?: boolean;
+}
 
 export const mapPostToPostDto = ({
 	id,

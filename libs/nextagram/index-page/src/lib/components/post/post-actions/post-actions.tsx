@@ -3,7 +3,7 @@ import { useTranslations } from '@nextagram/nextagram-shared-i18n';
 import { PostActionsCommentButton } from './post-actions-comment-button/post-actions-comment-button';
 import { PostActionsLikeButton } from './post-actions-like-button/post-actions-like-button';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 type PostActionsProps = Readonly<{
 	post: PostDto;

@@ -4,7 +4,7 @@ import {
 	PASSWORD_MIN_LENGTH,
 	USERNAME_MIN_LENGTH,
 	USERNAME_REGEX,
-} from '@nextagram/nextagram-shared-server/client';
+} from '@nextagram/nextagram-shared-server/constants';
 
 export const signUpFormSchema = z
 	.object({

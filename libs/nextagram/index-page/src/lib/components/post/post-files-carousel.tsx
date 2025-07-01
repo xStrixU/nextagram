@@ -9,7 +9,7 @@ import {
 	CarouselPrevious,
 } from '@nextagram/nextagram-shared-ui';
 
-import type { PostDto } from '@nextagram/nextagram-shared-server';
+import type { PostDto } from '@nextagram/nextagram-shared-actions';
 
 type PostFilesCarouselProps = Readonly<{
 	post: PostDto;

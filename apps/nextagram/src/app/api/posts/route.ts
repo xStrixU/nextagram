@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 
+import { mapPostToPostDto } from '@nextagram/nextagram-shared-actions';
 import { postsService } from '@nextagram/nextagram-shared-server';
-
-import { mapPostToPostDto } from './map-post-to-post-dto';
 
 import type { NextRequest } from 'next/server';
 
