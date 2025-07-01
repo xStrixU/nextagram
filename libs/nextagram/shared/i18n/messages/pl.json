@@ -188,6 +188,10 @@
 			"actions": {
 				"like": "Polajkuj",
 				"comment": "Skomentuj"
+			},
+			"comment": {
+				"placeholder": "Dodaj komentarz...",
+				"submit": "Opublikuj"
 			}
 		}
 	}

@@ -6,7 +6,7 @@ import type { InferHookCallbacks } from '@nextagram/nextagram-shared-actions/hoo
 
 type UseTogglePostLikeParams = InferHookCallbacks<typeof togglePostLikeFn>;
 
-export const useTogglePostLike = (params: UseTogglePostLikeParams) => {
+export const useTogglePostLike = (params?: UseTogglePostLikeParams) => {
 	const { execute: togglePostLike, ...rest } = useAction(
 		togglePostLikeFn,
 		params,

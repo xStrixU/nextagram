@@ -89,3 +89,21 @@ export const toggleLikeById = async ({
 
 	return action({ id, userId: user.id });
 };
+
+interface CommentByIdParams {
+	id: PostId;
+	user: User;
+	content: string;
+}
+
+export const commentById = async ({
+	user,
+	...params
+}: CommentByIdParams): Promise<Post | null> => {
+	const post = await postsRepository.commentById({
+		userId: user.id,
+		...params,
+	});
+
+	return post;
+};

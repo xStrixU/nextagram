@@ -188,6 +188,10 @@
 			"actions": {
 				"like": "Like",
 				"comment": "Comment"
+			},
+			"comment": {
+				"placeholder": "Add comment...",
+				"submit": "Publish"
 			}
 		}
 	}

@@ -1,6 +1,12 @@
 import { cuid2 } from 'drizzle-cuid2/postgres';
 import { relations } from 'drizzle-orm';
-import { pgTable, primaryKey, text, timestamp } from 'drizzle-orm/pg-core';
+import {
+	integer,
+	pgTable,
+	primaryKey,
+	text,
+	timestamp,
+} from 'drizzle-orm/pg-core';
 
 import { usersTable } from './auth';
 
@@ -25,6 +31,7 @@ export const postsTableRelations = relations(postsTable, ({ one, many }) => ({
 		references: [usersTable.id],
 	}),
 	likes: many(postLikesTable),
+	comments: many(postCommentsTable),
 }));
 
 export const postLikesTable = pgTable(
@@ -53,3 +60,31 @@ export const postLikesTableRelations = relations(postLikesTable, ({ one }) => ({
 		references: [postsTable.id],
 	}),
 }));
+
+export const postCommentsTable = pgTable('post_comments', {
+	id: integer().primaryKey().generatedAlwaysAsIdentity(),
+	postId: cuid2('post_id')
+		.notNull()
+		.references(() => postsTable.id),
+	userId: text('user_id')
+		.notNull()
+		.references(() => usersTable.id),
+	content: text('content').notNull(),
+	createdAt: timestamp('created_at')
+		.$defaultFn(() => /* @__PURE__ */ new Date())
+		.notNull(),
+});
+
+export const postCommentsTableRelations = relations(
+	postCommentsTable,
+	({ one }) => ({
+		post: one(postsTable, {
+			fields: [postCommentsTable.postId],
+			references: [postsTable.id],
+		}),
+		user: one(usersTable, {
+			fields: [postCommentsTable.userId],
+			references: [usersTable.id],
+		}),
+	}),
+);
